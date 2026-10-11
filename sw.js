@@ -1,7 +1,7 @@
 // Offline: guarda o app inteiro no aparelho na primeira visita.
 // Este arquivo é um modelo: o gerar.py preenche a versão e a lista de arquivos.
 // Cada versão gerada tem um cache próprio; ao publicar uma nova, a anterior é descartada.
-const VERSION = 'rt-4-b8842e69';
+const VERSION = 'rt-5-26a04e88';
 const PRECACHE = [
   "./",
   "./css/app.css",
@@ -28,11 +28,12 @@ const PRECACHE = [
   "./img/route-66/cool-springs-1600.ae99496c.jpg",
   "./img/route-66/cool-springs-800.ae99496c.jpg",
   "./img/route-66/hackberry-399.a176deff.jpg",
-  "./img/route-66/hero-1200.567fe04d.jpg",
-  "./img/route-66/hero-800.567fe04d.jpg",
+  "./img/route-66/hero-1600.e4bb4af2.jpg",
+  "./img/route-66/hero-800.e4bb4af2.jpg",
   "./img/route-66/kingman-1500.0c8864c4.jpg",
   "./img/route-66/kingman-800.0c8864c4.jpg",
-  "./img/route-66/oatman-346.89e07f25.jpg",
+  "./img/route-66/oatman-1600.958af349.jpg",
+  "./img/route-66/oatman-800.958af349.jpg",
   "./img/route-66/seligman-1500.b430ef3b.jpg",
   "./img/route-66/seligman-800.b430ef3b.jpg",
   "./img/route-66/williams-1280.f26cba49.jpg",

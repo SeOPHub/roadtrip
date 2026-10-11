@@ -64,8 +64,8 @@
   function doneCount(keys) {
     return keys.filter(function (k) { return visited[k]; }).length;
   }
-  function progressText(keys, unit) {
-    return doneCount(keys) + ' de ' + keys.length + ' ' + (unit || 'visitados');
+  function progressText(keys) {
+    return doneCount(keys) + ' de ' + keys.length + ' visitados';
   }
 
   /* ---------- componentes ---------- */
@@ -88,8 +88,8 @@
     return '<button class="check" type="button" data-visit="' + esc(key) + '" aria-pressed="' + on + '" aria-label="' +
       (on ? 'Desmarcar visitado' : 'Marcar como visitado') + '">' + icon('check', 18) + '</button>';
   }
-  function visitedTag(key, word) {
-    return key ? '<span class="visited-tag" data-tag="' + esc(key) + '"' + (visited[key] ? '' : ' hidden') + '>' + esc(word || 'Visitado') + '</span>' : '';
+  function visitedTag(key) {
+    return key ? '<span class="visited-tag" data-tag="' + esc(key) + '"' + (visited[key] ? '' : ' hidden') + '>Visitado</span>' : '';
   }
 
   function chip(c, extra) {
@@ -117,9 +117,9 @@
   }
 
   // Texto "x de y visitados" + barra; a barra cresce até o valor real após a pintura (syncBars).
-  function progressSpan(keys, id, unit) {
-    return '<div class="progress-wrap" data-progress="' + esc(id) + '" data-keys="' + esc(keys.join(' ')) + '"' + (unit ? ' data-unit="' + esc(unit) + '"' : '') + '>' +
-      '<span class="progress">' + progressText(keys, unit) + '</span>' +
+  function progressSpan(keys, id) {
+    return '<div class="progress-wrap" data-progress="' + esc(id) + '" data-keys="' + esc(keys.join(' ')) + '">' +
+      '<span class="progress">' + progressText(keys) + '</span>' +
       '<span class="progress-bar" aria-hidden="true"><i></i></span></div>';
   }
 
@@ -380,22 +380,6 @@
     '</div></section>';
   }
 
-  // Missão fotográfica: checklist sem links (cada item é uma foto a fazer).
-  function renderMission(b, destId) {
-    var items = list(b.items);
-    var keys = items.map(function (it) { return placeKey(destId, it); }).filter(Boolean);
-    var rows = map(items, function (it) {
-      var key = placeKey(destId, it);
-      return '<div class="row mission-row' + (visited[key] ? ' is-visited' : '') + '"><div class="row-main">' +
-        '<div class="row-title"><span class="mission-icon">' + icon('camera', 16) + '</span><span class="row-name">' + esc(it.name) + '</span>' + visitedTag(key, b.doneWord) + '</div>' +
-        '</div><div class="row-actions">' + checkBtn(key) + '</div></div>';
-    });
-    return '<section class="section"' + (b.id ? ' id="' + esc(b.id) + '"' : '') + ' data-reveal>' +
-      sectionHead(b, keys.length ? progressSpan(keys, b.id || b.title, b.unit) : '') +
-      '<div class="places">' + rows + '</div>' +
-    '</section>';
-  }
-
   function renderLodging(b) {
     return '<section class="section" id="hospedagem" data-reveal>' +
       '<div class="section-head"><div>' +
@@ -454,7 +438,6 @@
         case 'journey': return renderJourney(b, dest);
         case 'stops': return renderStops(b, dest.id);
         case 'callout': return renderCallout(b);
-        case 'mission': return renderMission(b, dest.id);
         default: return '';
       }
     });
@@ -540,7 +523,7 @@
     requestAnimationFrame(function () {
       root.querySelectorAll('.progress-wrap[data-keys]').forEach(function (w) {
         var keys = w.getAttribute('data-keys').split(' ');
-        w.querySelector('.progress').textContent = progressText(keys, w.getAttribute('data-unit'));
+        w.querySelector('.progress').textContent = progressText(keys);
         w.querySelector('.progress-bar > i').style.transform = 'scaleX(' + (keys.length ? doneCount(keys) / keys.length : 0) + ')';
       });
     });

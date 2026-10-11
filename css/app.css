@@ -494,7 +494,7 @@ button { font: inherit; }
   transition: transform var(--t-base);
 }
 .gallery-btn:active { transform: scale(.97); }
-.gallery figcaption { font-size: 12px; line-height: 1.35; color: var(--text-muted); letter-spacing: .02em; padding: 0 2px; }
+.gallery figcaption { font-size: 12px; line-height: 1.35; color: var(--text-muted); letter-spacing: .02em; padding: 0 2px; text-align: center; text-wrap: balance; }
 
 /* clima */
 .weather { display: flex; flex-direction: column; gap: 16px; padding: 20px 8px 20px 20px; }
@@ -924,9 +924,6 @@ a.video:active .video-play { transform: scale(.94); }
 .callout { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; padding: 20px; align-items: start; }
 .callout .tile { background: var(--amber-tint); border: 1px solid var(--amber-edge); color: var(--amber); }
 .callout-body { display: flex; flex-direction: column; gap: 8px; }
-
-/* missão fotográfica */
-.mission-icon { display: inline-flex; color: var(--amber); }
 
 /* hospedagem: descrição e observação do banho */
 .plan-desc { font-size: 15px; }

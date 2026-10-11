@@ -53,7 +53,7 @@ window.TRIP_DATA = {
    ],
    "video": {
     "title": "THE ULTIMATE JOSHUA TREE WEEKEND GUIDE (2026) Best Eats, Shopping, Coffee, Where to Stay & Explore!",
-    "url": "",
+    "url": "https://www.youtube.com/watch?v=Sf2a8D-WLcU&t=189s",
     "thumb": "video"
    },
    "blocks": [
@@ -73,7 +73,7 @@ window.TRIP_DATA = {
      "practical": {
       "label": "Possível parada prática",
       "name": "Walmart",
-      "maps": "https://maps.app.goo.gl/dK8bUDGBvBoUMRnqy9",
+      "maps": "https://maps.app.goo.gl/1AtUEkgumpEW2nAB8",
       "instagram": ""
      },
      "placesLabel": "Destaques",
@@ -82,14 +82,14 @@ window.TRIP_DATA = {
        "id": "desierto-alto",
        "name": "Desierto Alto",
        "desc": "Adega / wine shop com clima de deserto. Boa parada rápida e diferente.",
-       "maps": "",
+       "maps": "https://maps.app.goo.gl/9ScwzdvMWLGgqZTk6",
        "instagram": "https://www.instagram.com/desierto_alto/"
       },
       {
        "id": "copper-room",
        "name": "The Copper Room",
        "desc": "Restaurante/bar com atmosfera local e histórica.",
-       "maps": "",
+       "maps": "https://maps.app.goo.gl/KMG4cEHMCVd127p49",
        "instagram": "https://www.instagram.com/thecopperroom1957/"
       }
      ]
@@ -117,15 +117,72 @@ window.TRIP_DATA = {
        "id": "mane-street",
        "name": "Mane Street",
        "desc": "Rua principal e coração visual de Pioneertown.",
-       "maps": "",
+       "maps": "https://maps.app.goo.gl/dK35XwQWCfQpWBLz5",
        "instagram": ""
       },
       {
        "id": "pappy-harriets",
        "name": "Pappy & Harriet’s",
        "desc": "Restaurante, bar e casa de música ao vivo, conhecido por apresentações e pela atmosfera western.",
-       "maps": "",
+       "maps": "https://maps.app.goo.gl/WxKhWpPFEF842T6h8",
        "instagram": "https://www.instagram.com/pappyandharriets/"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "id": "downtown",
+     "eyebrow": "Cidade",
+     "title": "Downtown Joshua Tree",
+     "places": [
+      {
+       "id": "coffee-company",
+       "name": "Joshua Tree Coffee Company",
+       "desc": "café",
+       "maps": "https://maps.app.goo.gl/nst5RY73TRfozMXe9",
+       "instagram": "https://www.instagram.com/jtcoffeeco/"
+      },
+      {
+       "id": "mas-o-menos",
+       "name": "Más o Menos",
+       "desc": "café durante o dia / bar à noite",
+       "maps": "https://maps.app.goo.gl/5xAyaUYv68rtsiSPA",
+       "instagram": "https://www.instagram.com/masomenosbar/"
+      },
+      {
+       "id": "jt-saloon",
+       "name": "Joshua Tree Saloon",
+       "maps": "https://maps.app.goo.gl/UyL1PgxGMj56Ztky9",
+       "instagram": "https://www.instagram.com/jt_saloon/",
+       "desc": "alternativa lunch/bar"
+      },
+      {
+       "id": "roaming-travelers",
+       "name": "Roaming Travelers",
+       "maps": "https://maps.app.goo.gl/NT5cFHwUbtkhFTm59",
+       "instagram": "https://www.instagram.com/roamingtravelers/",
+       "desc": "loja"
+      },
+      {
+       "id": "sun-of-the-desert",
+       "name": "Sun of the Desert",
+       "maps": "https://maps.app.goo.gl/E4yVQjHDYgSG8ymF6",
+       "instagram": "https://www.instagram.com/sunofthedesert_",
+       "desc": "loja"
+      },
+      {
+       "id": "trading-post",
+       "name": "Joshua Tree Trading Post",
+       "maps": "https://maps.app.goo.gl/RsDo8Vq4DK2TUBMz6",
+       "instagram": "https://www.instagram.com/jttradingpost/",
+       "desc": "loja"
+      },
+      {
+       "id": "the-station",
+       "name": "The Station",
+       "maps": "https://maps.app.goo.gl/RwZSSH5hgXUvJBC37",
+       "instagram": "https://www.instagram.com/thestationjoshuatree/",
+       "desc": "posto temático"
       }
      ]
     },
@@ -145,60 +202,8 @@ window.TRIP_DATA = {
       }
      ],
      "pass": "America the Beautiful: aceito",
-     "maps": "",
+     "maps": "https://maps.app.goo.gl/BzkPyKuBSAjGiTZm9",
      "instagram": ""
-    },
-    {
-     "type": "group",
-     "id": "downtown",
-     "eyebrow": "Cidade",
-     "title": "Downtown Joshua Tree",
-     "places": [
-      {
-       "id": "coffee-company",
-       "name": "Joshua Tree Coffee Company",
-       "desc": "café",
-       "maps": "",
-       "instagram": "https://www.instagram.com/jtcoffeeco/"
-      },
-      {
-       "id": "mas-o-menos",
-       "name": "Más o Menos",
-       "desc": "café durante o dia / bar à noite",
-       "maps": "",
-       "instagram": "https://www.instagram.com/masomenosbar/"
-      },
-      {
-       "id": "jt-saloon",
-       "name": "Joshua Tree Saloon",
-       "maps": "",
-       "instagram": "https://www.instagram.com/jt_saloon/"
-      },
-      {
-       "id": "roaming-travelers",
-       "name": "Roaming Travelers",
-       "maps": "",
-       "instagram": ""
-      },
-      {
-       "id": "sun-of-the-desert",
-       "name": "Sun of the Desert",
-       "maps": "",
-       "instagram": ""
-      },
-      {
-       "id": "trading-post",
-       "name": "Joshua Tree Trading Post",
-       "maps": "",
-       "instagram": ""
-      },
-      {
-       "id": "the-station",
-       "name": "The Station",
-       "maps": "",
-       "instagram": ""
-      }
-     ]
     },
     {
      "type": "group",
@@ -257,7 +262,7 @@ window.TRIP_DATA = {
         }
        ],
        "note": "Pinturas rupestres · boa introdução ao parque",
-       "maps": "https://maps.app.goo.gl/DN61RVwdGIDq6fp2A",
+       "maps": "https://maps.app.goo.gl/58XTH3zRgAhs1ACR9",
        "instagram": ""
       },
       {
@@ -278,7 +283,7 @@ window.TRIP_DATA = {
          "icon": "footprints"
         }
        ],
-       "maps": "https://maps.app.goo.gl/MBzGSL1QkmhyuhKU9",
+       "maps": "https://maps.app.goo.gl/6JYTqyE3SZZsnTt98",
        "instagram": ""
       },
       {
@@ -295,7 +300,7 @@ window.TRIP_DATA = {
          "tone": "accent"
         }
        ],
-       "maps": "https://maps.app.goo.gl/L9HPXLpMkvXBfWf99",
+       "maps": "https://maps.app.goo.gl/vuvgQi2UBRwubJCC7",
        "instagram": ""
       },
       {
@@ -314,7 +319,7 @@ window.TRIP_DATA = {
          "tone": "accent"
         }
        ],
-       "maps": "https://maps.app.goo.gl/CAATSskqgudcQhcA",
+       "maps": "https://maps.app.goo.gl/GVEutqTWSpBt5dqS7",
        "instagram": ""
       },
       {
@@ -325,7 +330,7 @@ window.TRIP_DATA = {
          "t": "Parada rápida"
         }
        ],
-       "maps": "https://maps.app.goo.gl/VauNrGkpAbZYi5ZbA",
+       "maps": "https://maps.app.goo.gl/B2cjpVYzN2z5ndP97",
        "instagram": ""
       },
       {
@@ -337,7 +342,7 @@ window.TRIP_DATA = {
         }
        ],
        "note": "Pode ser apenas parada / formação ou pequena trilha",
-       "maps": "https://maps.app.goo.gl/NasD2rJpsW4j1Zjv8",
+       "maps": "https://maps.app.goo.gl/4kqH1CLqE2nsB8fZ6",
        "instagram": ""
       },
       {
@@ -348,7 +353,7 @@ window.TRIP_DATA = {
          "t": "Parada rápida"
         }
        ],
-       "maps": "https://maps.app.goo.gl/T3fpCYHq2VFmwBqK9",
+       "maps": "https://maps.app.goo.gl/UjFpKBCyQF7yaHE59",
        "instagram": ""
       }
      ]
@@ -426,7 +431,7 @@ window.TRIP_DATA = {
           "sem água",
           "sem energia"
          ],
-         "maps": "https://maps.app.goo.gl/qLaijhkze2upKRccZ",
+         "maps": "https://maps.app.goo.gl/pu5BjDZDx6FnYPSn8",
          "instagram": ""
         }
        ],
@@ -672,7 +677,7 @@ window.TRIP_DATA = {
         "Aqui, o clima de Radiator Springs ganha vida: carros antigos, fachadas coloridas, lojas de souvenirs e referências à inspiração de Carros."
        ],
        "maps": "https://maps.app.goo.gl/H3pZhs5p2AUw1woj7",
-       "instagram": "https://www.instagram.com/p/DeKhKGwFfLP/?stkn=eXlmbTB0d3N0aW1p",
+       "instagram": "",
        "highlight": "as fachadas, Delgadillo's Snow Cap e fotos inspiradas no filme."
       },
       {
@@ -703,14 +708,14 @@ window.TRIP_DATA = {
          "label": "Jantar sugerido",
          "name": "Rod's Steak House",
          "maps": "https://maps.app.goo.gl/osHnfnreYU8ym7ek9",
-         "instagram": ""
+         "instagram": "https://www.instagram.com/rodssteakhouse/"
         },
         {
          "id": "cruisers-cafe",
          "label": "Alternativa",
          "name": "Cruisers Route 66 Café",
-         "maps": "",
-         "instagram": ""
+         "maps": "https://maps.app.goo.gl/Nqw4bivJiqniUB4J6",
+         "instagram": "https://www.instagram.com/cruiserscafe66/"
         }
        ]
       }
@@ -801,36 +806,6 @@ window.TRIP_DATA = {
      "icon": "car",
      "title": "The Cars Connection",
      "body": "Seligman, Hackberry e outras cidades da Route 66 ajudam a contar a história visual que inspirou o universo de Carros."
-    },
-    {
-     "type": "mission",
-     "id": "photo-mission",
-     "eyebrow": "Photo mission",
-     "title": "Checklist fotográfico",
-     "items": [
-      {
-       "id": "foto-roys",
-       "name": "Letreiro do Roy's"
-      },
-      {
-       "id": "foto-burros-oatman",
-       "name": "Burros de Oatman"
-      },
-      {
-       "id": "foto-posto-hackberry",
-       "name": "Posto de Hackberry"
-      },
-      {
-       "id": "foto-carros-seligman",
-       "name": "Carros de Seligman"
-      },
-      {
-       "id": "foto-neon-williams",
-       "name": "Neon noturno de Williams"
-      }
-     ],
-     "unit": "feitas",
-     "doneWord": "Feita"
     }
    ]
   },
@@ -944,11 +919,11 @@ window.TRIP_PHOTOS = {
   "h": 501
  },
  "route-66/hero": {
-  "src": "img/route-66/hero-800.567fe04d.jpg",
-  "srcset": "img/route-66/hero-800.567fe04d.jpg 800w, img/route-66/hero-1200.567fe04d.jpg 1200w",
-  "full": "img/route-66/hero-1200.567fe04d.jpg",
-  "w": 1200,
-  "h": 675
+  "src": "img/route-66/hero-800.e4bb4af2.jpg",
+  "srcset": "img/route-66/hero-800.e4bb4af2.jpg 800w, img/route-66/hero-1600.e4bb4af2.jpg 1600w",
+  "full": "img/route-66/hero-1600.e4bb4af2.jpg",
+  "w": 1600,
+  "h": 1068
  },
  "route-66/kingman": {
   "src": "img/route-66/kingman-800.0c8864c4.jpg",
@@ -958,11 +933,11 @@ window.TRIP_PHOTOS = {
   "h": 1000
  },
  "route-66/oatman": {
-  "src": "img/route-66/oatman-346.89e07f25.jpg",
-  "srcset": "img/route-66/oatman-346.89e07f25.jpg 346w",
-  "full": "img/route-66/oatman-346.89e07f25.jpg",
-  "w": 346,
-  "h": 578
+  "src": "img/route-66/oatman-800.958af349.jpg",
+  "srcset": "img/route-66/oatman-800.958af349.jpg 800w, img/route-66/oatman-1600.958af349.jpg 1600w",
+  "full": "img/route-66/oatman-1600.958af349.jpg",
+  "w": 1600,
+  "h": 800
  },
  "route-66/seligman": {
   "src": "img/route-66/seligman-800.b430ef3b.jpg",
@@ -979,4 +954,4 @@ window.TRIP_PHOTOS = {
   "h": 960
  }
 };
-window.TRIP_BUILD = {"version": 4, "date": "11/10/2026 10:16"};
+window.TRIP_BUILD = {"version": 5, "date": "11/10/2026 12:10"};
