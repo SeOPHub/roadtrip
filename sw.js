@@ -1,7 +1,7 @@
 // Offline: guarda o app inteiro no aparelho na primeira visita.
 // Este arquivo é um modelo: o gerar.py preenche a versão e a lista de arquivos.
 // Cada versão gerada tem um cache próprio; ao publicar uma nova, a anterior é descartada.
-const VERSION = 'rt-1-74aef7d3';
+const VERSION = 'rt-2-0afe4f44';
 const PRECACHE = [
   "./",
   "./css/app.css",
@@ -15,8 +15,8 @@ const PRECACHE = [
   "./img/joshua-tree/cholla-800.537123c8.jpg",
   "./img/joshua-tree/deserto-1600.53441302.jpg",
   "./img/joshua-tree/deserto-800.53441302.jpg",
-  "./img/joshua-tree/hero-800.24e74e26.jpg",
-  "./img/joshua-tree/hero-900.24e74e26.jpg",
+  "./img/joshua-tree/hero-1600.37d36865.jpg",
+  "./img/joshua-tree/hero-800.37d36865.jpg",
   "./img/joshua-tree/hidden-valley-1600.8a8a4a30.jpg",
   "./img/joshua-tree/hidden-valley-800.8a8a4a30.jpg",
   "./img/joshua-tree/joshua-trees-1600.737e767b.jpg",

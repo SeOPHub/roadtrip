@@ -524,11 +524,11 @@ window.TRIP_PHOTOS = {
   "h": 1066
  },
  "joshua-tree/hero": {
-  "src": "img/joshua-tree/hero-800.24e74e26.jpg",
-  "srcset": "img/joshua-tree/hero-800.24e74e26.jpg 800w, img/joshua-tree/hero-900.24e74e26.jpg 900w",
-  "full": "img/joshua-tree/hero-900.24e74e26.jpg",
-  "w": 900,
-  "h": 600
+  "src": "img/joshua-tree/hero-800.37d36865.jpg",
+  "srcset": "img/joshua-tree/hero-800.37d36865.jpg 800w, img/joshua-tree/hero-1600.37d36865.jpg 1600w",
+  "full": "img/joshua-tree/hero-1600.37d36865.jpg",
+  "w": 1600,
+  "h": 1067
  },
  "joshua-tree/hidden-valley": {
   "src": "img/joshua-tree/hidden-valley-800.8a8a4a30.jpg",
@@ -552,4 +552,4 @@ window.TRIP_PHOTOS = {
   "h": 891
  }
 };
-window.TRIP_BUILD = {"version": 1, "date": "10/10/2026 22:04"};
+window.TRIP_BUILD = {"version": 2, "date": "10/10/2026 22:25"};
