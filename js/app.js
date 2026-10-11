@@ -64,8 +64,8 @@
   function doneCount(keys) {
     return keys.filter(function (k) { return visited[k]; }).length;
   }
-  function progressText(keys) {
-    return doneCount(keys) + ' de ' + keys.length + ' visitados';
+  function progressText(keys, unit) {
+    return doneCount(keys) + ' de ' + keys.length + ' ' + (unit || 'visitados');
   }
 
   /* ---------- componentes ---------- */
@@ -88,8 +88,8 @@
     return '<button class="check" type="button" data-visit="' + esc(key) + '" aria-pressed="' + on + '" aria-label="' +
       (on ? 'Desmarcar visitado' : 'Marcar como visitado') + '">' + icon('check', 18) + '</button>';
   }
-  function visitedTag(key) {
-    return key ? '<span class="visited-tag" data-tag="' + esc(key) + '"' + (visited[key] ? '' : ' hidden') + '>Visitado</span>' : '';
+  function visitedTag(key, word) {
+    return key ? '<span class="visited-tag" data-tag="' + esc(key) + '"' + (visited[key] ? '' : ' hidden') + '>' + esc(word || 'Visitado') + '</span>' : '';
   }
 
   function chip(c, extra) {
@@ -117,9 +117,9 @@
   }
 
   // Texto "x de y visitados" + barra; a barra cresce até o valor real após a pintura (syncBars).
-  function progressSpan(keys, id) {
-    return '<div class="progress-wrap" data-progress="' + esc(id) + '" data-keys="' + esc(keys.join(' ')) + '">' +
-      '<span class="progress">' + progressText(keys) + '</span>' +
+  function progressSpan(keys, id, unit) {
+    return '<div class="progress-wrap" data-progress="' + esc(id) + '" data-keys="' + esc(keys.join(' ')) + '"' + (unit ? ' data-unit="' + esc(unit) + '"' : '') + '>' +
+      '<span class="progress">' + progressText(keys, unit) + '</span>' +
       '<span class="progress-bar" aria-hidden="true"><i></i></span></div>';
   }
 
@@ -175,7 +175,18 @@
     return '<section class="intro" data-reveal><div class="eyebrow">Introdução</div>' +
       (b.lead ? '<p class="lead">' + esc(b.lead) + '</p>' : '') +
       (b.body ? '<p class="body-text">' + esc(b.body) + '</p>' : '') +
+      (b.feature ? featureNum(b.feature) : '') +
     '</section>';
+  }
+
+  function featureNum(f) {
+    return '<div class="feature-num"><span class="v">' + esc(f.value) + '</span><span class="eyebrow">' + esc(f.label) + '</span></div>';
+  }
+
+  function sectionHead(b, extra) {
+    return '<div class="section-head"><div>' +
+      (b.eyebrow ? '<div class="eyebrow">' + esc(b.eyebrow) + '</div>' : '') +
+      '<h2 class="h2">' + esc(b.title) + '</h2></div>' + (extra || '') + '</div>';
   }
 
   function photoBlock(ph, destId) {
@@ -184,19 +195,22 @@
       (ph.caption ? '<span class="photo-cap">' + esc(ph.caption) + '</span>' : '') + '</button>';
   }
 
+  function placeRow(p, destId) {
+    var key = placeKey(destId, p);
+    return '<div class="row' + (visited[key] ? ' is-visited' : '') + '"><div class="row-main">' +
+        (p.label ? '<span class="label-sm">' + esc(p.label) + '</span>' : '') +
+        '<div class="row-title"><span class="row-name">' + esc(p.name) + '</span>' +
+          map(p.chips, function (c) { return chip(c, ' chip--sm'); }) + visitedTag(key) + '</div>' +
+        (p.desc ? '<span class="row-desc">' + esc(p.desc) + '</span>' : '') +
+      '</div><div class="row-actions">' + actions(p.maps, p.instagram) + checkBtn(key) + '</div></div>';
+  }
+
   function renderGroup(b, destId) {
     var places = list(b.places);
     var keys = places.map(function (p) { return placeKey(destId, p); }).filter(Boolean);
     var pr = b.practical;
 
-    var rows = map(places, function (p) {
-      var key = placeKey(destId, p);
-      return '<div class="row' + (visited[key] ? ' is-visited' : '') + '"><div class="row-main">' +
-          '<div class="row-title"><span class="row-name">' + esc(p.name) + '</span>' +
-            map(p.chips, function (c) { return chip(c, ' chip--sm'); }) + visitedTag(key) + '</div>' +
-          (p.desc ? '<span class="row-desc">' + esc(p.desc) + '</span>' : '') +
-        '</div><div class="row-actions">' + actions(p.maps, p.instagram) + checkBtn(key) + '</div></div>';
-    });
+    var rows = map(places, function (p) { return placeRow(p, destId); });
 
     return '<section class="section"' + (b.id ? ' id="' + esc(b.id) + '"' : '') + ' data-reveal>' +
       '<div class="section-head"><div>' +
@@ -205,7 +219,7 @@
         (keys.length > 1 ? progressSpan(keys, b.id || b.title) : '') +
       '</div>' +
       (b.photo ? photoBlock(b.photo, destId) : '') +
-      (b.feature ? '<div class="feature-num"><span class="v">' + esc(b.feature.value) + '</span><span class="eyebrow">' + esc(b.feature.label) + '</span></div>' : '') +
+      (b.feature ? featureNum(b.feature) : '') +
       (list(b.paragraphs).length ? '<div class="paras">' + map(b.paragraphs, function (p) { return '<p class="body-text">' + esc(p) + '</p>'; }) + '</div>' : '') +
       (pr ? '<div class="card practical"><span class="tile">' + icon('shopping-cart', 18) + '</span>' +
         '<div class="stack-2"><span class="label-sm">' + esc(pr.label) + '</span><span class="name">' + esc(pr.name) + '</span></div>' +
@@ -272,9 +286,10 @@
   }
 
   function renderPlan(p) {
-    var shower = Math.max(0, Math.min(5, p.shower || 0));
+    var max = p.showerMax || 5;
+    var shower = Math.max(0, Math.min(max, p.shower || 0));
     var dots = '';
-    for (var i = 0; i < 5; i++) dots += '<span' + (i < shower ? ' class="on"' : '') + '></span>';
+    for (var i = 0; i < max; i++) dots += '<span' + (i < shower ? ' class="on"' : '') + '></span>';
 
     var sites = map(p.sites, function (s) {
       return '<div class="site"><div class="site-main">' +
@@ -291,8 +306,10 @@
       '<div class="plan-head"><span class="eyebrow">Plano ' + esc(p.letter) + '</span>' +
         (p.tag ? '<span class="plan-tag">' + icon('star', 12) + esc(p.tag) + '</span>' : '') + '</div>' +
       '<div class="plan-name">' + esc(p.name) + '</div>' +
-      '<div class="shower" aria-label="Banho: ' + shower + ' de 5"><span class="shower-label">' + icon('shower-head') + 'Banho</span>' +
-        '<div class="shower-dots">' + dots + '</div><span class="shower-val">' + shower + '/5</span></div>' +
+      (p.desc ? '<p class="body-text plan-desc">' + esc(p.desc) + '</p>' : '') +
+      '<div class="shower-wrap"><div class="shower" aria-label="Banho: ' + shower + ' de ' + max + '"><span class="shower-label">' + icon('shower-head') + 'Banho</span>' +
+        '<div class="shower-dots" style="grid-template-columns:repeat(' + max + ',minmax(0,1fr))">' + dots + '</div><span class="shower-val">' + shower + '/' + max + '</span></div>' +
+        (p.showerNote ? '<span class="shower-note">' + esc(p.showerNote) + '</span>' : '') + '</div>' +
       (list(p.facts).length ? '<div class="facts">' + factsHtml(p.facts) + '</div>' : '') +
       (list(p.amenities).length ? '<div class="pills">' + map(p.amenities, function (a) { return '<span class="pill pill--has">' + icon('check', 14) + esc(a) + '</span>'; }) + '</div>' : '') +
       (list(p.lacks).length ? '<div class="pills">' + map(p.lacks, function (a) { return '<span class="pill pill--lacks">' + icon('x', 14) + esc(a) + '</span>'; }) + '</div>' : '') +
@@ -300,6 +317,83 @@
       (p.note ? '<div class="plan-note">' + icon('info') + '<span>' + esc(p.note) + '</span></div>' : '') +
       ('maps' in p || 'instagram' in p ? '<div class="plan-foot">' + actions(p.maps, p.instagram) + '</div>' : '') +
     '</div>';
+  }
+
+  // Jornada: sequência da estrada, montada a partir das paradas do bloco "stops".
+  function renderJourney(b, dest) {
+    var stops = [];
+    list(dest.blocks).forEach(function (x) { if (x.type === 'stops') stops = stops.concat(list(x.stops)); });
+    var items = '<li><span class="num">00</span><span class="dot dot--start"></span><span class="name">' + esc(b.start) + '</span>' +
+      '<span class="soon">' + esc(b.startLabel || '') + '</span></li>' +
+      map(stops, function (s, i) {
+        var key = placeKey(dest.id, s), last = i === stops.length - 1;
+        return '<li><span class="num">' + esc(s.num) + '</span><span class="dot' + (visited[key] ? ' on' : '') + '" data-dot="' + esc(key) + '"></span>' +
+          '<button class="journey-go" type="button" data-scroll="stop-' + esc(s.id) + '"><span class="name">' + esc(s.town) + '</span>' +
+          '<span class="soon">' + esc(last ? 'Pernoite' : (list(s.chips)[1] || {}).t || '') + '</span></button></li>';
+      });
+    var r = b.route;
+    return '<section class="section"' + (b.id ? ' id="' + esc(b.id) + '"' : '') + ' data-reveal>' + sectionHead(b) +
+      '<div class="upcoming journey"><ol>' + items + '</ol></div>' +
+      (r ? '<div class="card practical"><span class="tile">' + icon('map', 18) + '</span>' +
+        '<div class="stack-2"><span class="label-sm">' + esc(r.label) + '</span><span class="name">' + esc(r.name) + '</span></div>' +
+        actions(r.maps, r.instagram) + '</div>' + (r.note ? '<p class="row-desc">' + esc(r.note) + '</p>' : '') : '') +
+    '</section>';
+  }
+
+  // Paradas: card editorial por parada (foto, tags, texto, imperdível/dica, links e check).
+  function renderStops(b, destId) {
+    var stops = list(b.stops);
+    var keys = [];
+    stops.forEach(function (s) {
+      keys.push(placeKey(destId, s));
+      list(s.places).forEach(function (p) { keys.push(placeKey(destId, p)); });
+    });
+    keys = keys.filter(Boolean);
+    var cards = map(stops, function (s) {
+      var key = placeKey(destId, s);
+      var label = 'Stop ' + s.num + ' · ' + s.town;
+      return '<article class="card stop' + (visited[key] ? ' is-visited' : '') + '" id="stop-' + esc(s.id) + '" data-reveal>' +
+        '<button class="photo-block stop-photo" type="button" data-photo data-caption="' + esc(s.title) + '" aria-label="Ampliar: ' + esc(s.title) + '">' +
+          photo(destId, s.photo, s.title, '16:10', 'wide') + '<span class="photo-shade"></span></button>' +
+        '<div class="stop-body">' +
+          '<div class="stop-head"><span class="eyebrow">' + esc(label) + '</span>' + visitedTag(key) + '</div>' +
+          '<h3 class="stop-title">' + esc(s.title) + '</h3>' +
+          (list(s.chips).length ? '<div class="chips">' + map(s.chips, function (c) { return chip(c); }) + '</div>' : '') +
+          (list(s.paragraphs).length ? '<div class="paras">' + map(s.paragraphs, function (p) { return '<p class="body-text">' + esc(p) + '</p>'; }) + '</div>' : '') +
+          (s.highlight ? '<div class="stop-note"><span class="label-sm">' + icon('star', 14) + 'Imperdível</span><span>' + esc(s.highlight) + '</span></div>' : '') +
+          (s.tip ? '<div class="stop-note"><span class="label-sm">' + icon('lightbulb', 14) + 'Dica</span><span>' + esc(s.tip) + '</span></div>' : '') +
+          (list(s.places).length ? '<div class="places stop-places">' + map(s.places, function (p) { return placeRow(p, destId); }) + '</div>' : '') +
+          '<div class="stop-foot">' + actions(s.maps, s.instagram) + checkBtn(key) + '</div>' +
+        '</div></article>';
+    });
+    return '<section class="section"' + (b.id ? ' id="' + esc(b.id) + '"' : '') + ' data-reveal>' +
+      sectionHead(b, keys.length ? progressSpan(keys, b.id || b.title) : '') +
+      '<div class="stops">' + cards + '</div>' +
+    '</section>';
+  }
+
+  function renderCallout(b) {
+    return '<section class="section" data-reveal><div class="card callout">' +
+      '<span class="tile">' + icon(b.icon || 'star', 18) + '</span>' +
+      '<div class="callout-body"><h3 class="stop-title">' + esc(b.title) + '</h3>' +
+        (b.body ? '<p class="body-text">' + esc(b.body) + '</p>' : '') + '</div>' +
+    '</div></section>';
+  }
+
+  // Missão fotográfica: checklist sem links (cada item é uma foto a fazer).
+  function renderMission(b, destId) {
+    var items = list(b.items);
+    var keys = items.map(function (it) { return placeKey(destId, it); }).filter(Boolean);
+    var rows = map(items, function (it) {
+      var key = placeKey(destId, it);
+      return '<div class="row mission-row' + (visited[key] ? ' is-visited' : '') + '"><div class="row-main">' +
+        '<div class="row-title"><span class="mission-icon">' + icon('camera', 16) + '</span><span class="row-name">' + esc(it.name) + '</span>' + visitedTag(key, b.doneWord) + '</div>' +
+        '</div><div class="row-actions">' + checkBtn(key) + '</div></div>';
+    });
+    return '<section class="section"' + (b.id ? ' id="' + esc(b.id) + '"' : '') + ' data-reveal>' +
+      sectionHead(b, keys.length ? progressSpan(keys, b.id || b.title, b.unit) : '') +
+      '<div class="places">' + rows + '</div>' +
+    '</section>';
   }
 
   function renderLodging(b) {
@@ -357,6 +451,10 @@
         case 'spots': return renderSpots(b, dest.id);
         case 'lodging': return renderLodging(b);
         case 'inspirations': return renderInspirations(b, dest.id);
+        case 'journey': return renderJourney(b, dest);
+        case 'stops': return renderStops(b, dest.id);
+        case 'callout': return renderCallout(b);
+        case 'mission': return renderMission(b, dest.id);
         default: return '';
       }
     });
@@ -374,7 +472,7 @@
         '<a class="hero-back glass-chip" href="#/" aria-label="Voltar ao início">' + icon('arrow-left', 18) + 'Início</a>' +
         '<div class="hero-body" data-reveal>' +
           '<div class="hero-stage"><div class="rule"></div><span class="eyebrow eyebrow--light">Etapa ' + num(idx) + '</span></div>' +
-          '<h1 class="hero-title"><span class="n">' + esc(dest.name) + '</span>' +
+          '<h1 class="hero-title"><span class="n">' + esc(dest.title || dest.name) + '</span>' +
             (dest.places ? '<span class="p">· ' + esc(dest.places) + '</span>' : '') + '</h1>' +
           '<div class="meta-row">' +
             (dest.distance ? '<span class="glass-chip">' + icon('route', 14) + esc(dest.distance) + '</span>' : '') +
@@ -442,7 +540,7 @@
     requestAnimationFrame(function () {
       root.querySelectorAll('.progress-wrap[data-keys]').forEach(function (w) {
         var keys = w.getAttribute('data-keys').split(' ');
-        w.querySelector('.progress').textContent = progressText(keys);
+        w.querySelector('.progress').textContent = progressText(keys, w.getAttribute('data-unit'));
         w.querySelector('.progress-bar > i').style.transform = 'scaleX(' + (keys.length ? doneCount(keys) / keys.length : 0) + ')';
       });
     });
@@ -485,8 +583,9 @@
     var on = visited[key];
     btn.setAttribute('aria-pressed', String(on));
     btn.setAttribute('aria-label', on ? 'Desmarcar visitado' : 'Marcar como visitado');
-    var row = btn.closest('.row');
+    var row = btn.closest('.row, .stop');
     if (row) row.classList.toggle('is-visited', on);
+    root.querySelectorAll('[data-dot="' + key + '"]').forEach(function (d) { d.classList.toggle('on', on); });
     root.querySelectorAll('[data-tag="' + key + '"]').forEach(function (t) { t.hidden = !on; });
     syncBars();
     btn.classList.remove('just-checked');
@@ -511,8 +610,13 @@
   }
 
   root.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-visit], [data-photo], #lightbox, [aria-disabled="true"]');
+    var t = e.target.closest('[data-visit], [data-photo], [data-scroll], #lightbox, [aria-disabled="true"]');
     if (!t) return;
+    if (t.hasAttribute('data-scroll')) {
+      var target = document.getElementById(t.getAttribute('data-scroll'));
+      if (target) target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      return;
+    }
     if (t.hasAttribute('aria-disabled')) { e.preventDefault(); return; }
     if (t.hasAttribute('data-visit')) toggleVisited(t);
     else if (t.hasAttribute('data-photo')) openLightbox(t);

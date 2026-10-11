@@ -460,8 +460,379 @@ window.TRIP_DATA = {
    ]
   },
   {
-   "id": "route-66-williams",
-   "name": "Route 66 / Williams"
+   "id": "route-66",
+   "ready": true,
+   "name": "Route 66",
+   "places": "Amboy · Oatman · Kingman · Seligman · Williams",
+   "distance": "~340 milhas / ~547km",
+   "drive": "~6h30 dirigindo",
+   "hero": "hero",
+   "gallery": [
+    {
+     "foto": "oatman",
+     "caption": "Oatman"
+    },
+    {
+     "foto": "hackberry",
+     "caption": "Hackberry General Store"
+    },
+    {
+     "foto": "seligman",
+     "caption": "Seligman"
+    }
+   ],
+   "weather": [
+    {
+     "date": "1 nov",
+     "hi": "19°",
+     "lo": "4°",
+     "label": "nublado",
+     "icon": "cloud"
+    },
+    {
+     "date": "2 nov",
+     "hi": "16°",
+     "lo": "4°",
+     "label": "nublado",
+     "icon": "cloud"
+    },
+    {
+     "date": "3 nov",
+     "hi": "16°",
+     "lo": "3°",
+     "label": "parcialmente nublado",
+     "icon": "cloud-sun"
+    }
+   ],
+   "blocks": [
+    {
+     "type": "intro",
+     "lead": "Em 2026, a lendária Route 66 completa 100 anos. Uma viagem por postos abandonados, letreiros de neon, cidades do Velho Oeste e personagens que parecem ter saído diretamente do filme Carros.",
+     "body": "Hoje é dia de trocar as paisagens de Joshua Tree pela estrada mais nostálgica dos Estados Unidos. Sete paradas, centenas de quilômetros e uma verdadeira viagem no tempo.",
+     "feature": {
+      "value": "1926 — 2026",
+      "label": "100 years of Route 66"
+     }
+    },
+    {
+     "type": "journey",
+     "id": "jornada",
+     "eyebrow": "Mapa · jornada",
+     "title": "A estrada do dia",
+     "start": "Joshua Tree",
+     "startLabel": "Saída",
+     "route": {
+      "label": "Itinerário completo",
+      "name": "Joshua Tree → Williams",
+      "maps": "https://maps.app.goo.gl/8ToPLKDFWp5KCF4FA",
+      "note": "O Google Maps costuma sugerir desvios fora da Route 66. Este mapa tem o itinerário correto."
+     }
+    },
+    {
+     "type": "stops",
+     "id": "paradas",
+     "eyebrow": "Hotspots · paradas",
+     "title": "Sete paradas",
+     "stops": [
+      {
+       "id": "amboy",
+       "num": "01",
+       "town": "Amboy",
+       "title": "Roy's Motel & Café",
+       "photo": "amboy",
+       "chips": [
+        {
+         "t": "Foto rápida",
+         "icon": "camera"
+        },
+        {
+         "t": "10–20 min",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "Nosso primeiro encontro com a Route 66. O lendário letreiro de Roy's, em meio ao deserto de Mojave, é um dos cenários mais icônicos da estrada."
+       ],
+       "maps": "https://maps.app.goo.gl/32RATNS6Uune21318",
+       "instagram": "",
+       "highlight": "foto com o letreiro e o posto vintage."
+      },
+      {
+       "id": "oatman",
+       "num": "02",
+       "town": "Oatman",
+       "title": "Wild West Experience",
+       "photo": "oatman",
+       "chips": [
+        {
+         "t": "Parada principal",
+         "icon": "star",
+         "tone": "accent"
+        },
+        {
+         "t": "45–90 min",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "Antiga cidade mineradora nas Black Mountains, famosa pelos burros que circulam pelas ruas e pela atmosfera do Velho Oeste."
+       ],
+       "maps": "https://maps.app.goo.gl/QfqWcyYQvJeXt5Va9",
+       "instagram": "",
+       "highlight": "burros, fachadas históricas e encenação de tiroteio, caso esteja ocorrendo no horário da visita."
+      },
+      {
+       "id": "cool-springs",
+       "num": "03",
+       "town": "Cool Springs",
+       "title": "Cool Springs Station",
+       "photo": "cool-springs",
+       "chips": [
+        {
+         "t": "Foto rápida",
+         "icon": "camera"
+        },
+        {
+         "t": "10–15 min",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "Um posto histórico cercado pelas montanhas do Arizona. Pequena parada para fotografar a arquitetura vintage e continuar pela antiga Route 66."
+       ],
+       "maps": "https://maps.app.goo.gl/zuWNaocgrnkSbL6q9",
+       "instagram": ""
+      },
+      {
+       "id": "kingman",
+       "num": "04",
+       "town": "Kingman",
+       "title": "Heart of Historic Route 66",
+       "photo": "kingman",
+       "chips": [
+        {
+         "t": "Parada de apoio",
+         "icon": "fuel"
+        },
+        {
+         "t": "30–60 min",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "Uma das principais cidades do trajeto. Momento ideal para almoçar, abastecer e conhecer a Andy Devine Avenue, ligada ao traçado histórico da estrada."
+       ],
+       "maps": "https://maps.app.goo.gl/T7SGb7wB4tAR6AzC9",
+       "instagram": "",
+       "tip": "priorizar alimentação e combustível; a jornada ainda é longa."
+      },
+      {
+       "id": "hackberry",
+       "num": "05",
+       "town": "Hackberry",
+       "title": "Hackberry General Store",
+       "photo": "hackberry",
+       "chips": [
+        {
+         "t": "Must stop",
+         "icon": "star",
+         "tone": "accent"
+        },
+        {
+         "t": "20–30 min",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "Um verdadeiro museu a céu aberto, repleto de bombas de combustível antigas, placas enferrujadas e memorabilia da Route 66."
+       ],
+       "maps": "https://maps.app.goo.gl/j1zerwRQuF3vyLsg9",
+       "instagram": "",
+       "highlight": "reproduzir fotografias vintage com os carros clássicos e o antigo posto."
+      },
+      {
+       "id": "seligman",
+       "num": "06",
+       "town": "Seligman",
+       "title": "The Cars Connection",
+       "photo": "seligman",
+       "chips": [
+        {
+         "t": "Must stop",
+         "icon": "star",
+         "tone": "accent"
+        },
+        {
+         "t": "45–75 min",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "A cidade que ajudou a salvar a histórica Route 66. Angel Delgadillo teve papel fundamental no movimento de preservação da estrada.",
+        "Aqui, o clima de Radiator Springs ganha vida: carros antigos, fachadas coloridas, lojas de souvenirs e referências à inspiração de Carros."
+       ],
+       "maps": "https://maps.app.goo.gl/H3pZhs5p2AUw1woj7",
+       "instagram": "https://www.instagram.com/p/DeKhKGwFfLP/?stkn=eXlmbTB0d3N0aW1p",
+       "highlight": "as fachadas, Delgadillo's Snow Cap e fotos inspiradas no filme."
+      },
+      {
+       "id": "williams",
+       "num": "07",
+       "town": "Williams",
+       "title": "Last Stop — Neon Nights",
+       "photo": "williams",
+       "chips": [
+        {
+         "t": "Destino final",
+         "icon": "flag",
+         "tone": "accent"
+        },
+        {
+         "t": "Pernoite",
+         "icon": "moon"
+        }
+       ],
+       "paragraphs": [
+        "Nossa última parada é uma das cidades mais charmosas da Route 66 no Arizona. Bares, diners, steakhouses e letreiros iluminados criam o cenário perfeito para encerrar o dia."
+       ],
+       "maps": "https://maps.app.goo.gl/bex1myEBJ1SMNzVN7",
+       "instagram": "",
+       "places": [
+        {
+         "id": "rods-steak-house",
+         "label": "Jantar sugerido",
+         "name": "Rod's Steak House",
+         "maps": "https://maps.app.goo.gl/osHnfnreYU8ym7ek9",
+         "instagram": ""
+        },
+        {
+         "id": "cruisers-cafe",
+         "label": "Alternativa",
+         "name": "Cruisers Route 66 Café",
+         "maps": "",
+         "instagram": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "lodging",
+     "eyebrow": "Onde dormir · Williams",
+     "title": "Hospedagem",
+     "plans": [
+      {
+       "letter": "A",
+       "featured": true,
+       "tag": "Melhor conforto e banho",
+       "name": "Grand Canyon Railway RV Park",
+       "shower": 3,
+       "showerMax": 3,
+       "facts": [
+        {
+         "icon": "map-pin",
+         "t": "dá para ir andando até a cidade"
+        },
+        {
+         "icon": "banknote",
+         "t": "US$ 78,98 com taxa"
+        }
+       ],
+       "amenities": [
+        "Água quente",
+        "Banheiro",
+        "Wi-Fi",
+        "Piscina coberta"
+       ],
+       "note": "A estadia depende de aceitarem o tipo de veículo.",
+       "maps": "https://maps.app.goo.gl/UuoDfDWhhdw8EgzM6",
+       "instagram": ""
+      },
+      {
+       "letter": "B",
+       "name": "Railside RV Ranch",
+       "shower": 3,
+       "showerMax": 3,
+       "facts": [
+        {
+         "icon": "map-pin",
+         "t": "~20 min a pé do centro"
+        },
+        {
+         "icon": "banknote",
+         "t": "US$ 68–74 com taxa"
+        }
+       ],
+       "amenities": [
+        "Água quente",
+        "Banheiro",
+        "Wi-Fi"
+       ],
+       "maps": "https://maps.app.goo.gl/CtxVGRJeMY8A481B6",
+       "instagram": ""
+      },
+      {
+       "letter": "C",
+       "name": "Love's Travel Stop",
+       "shower": 2,
+       "showerMax": 3,
+       "facts": [
+        {
+         "icon": "map-pin",
+         "t": "~20 min a pé do centro"
+        },
+        {
+         "icon": "banknote",
+         "t": "US$ 0* (não confirmado)"
+        }
+       ],
+       "lacks": [
+        "Pernoite a confirmar",
+        "Banho a confirmar"
+       ],
+       "note": "Plano econômico de contingência. A unidade #553 em Williams informa sete chuveiros, mas banho e estacionamento noturno precisam de autorização e podem ser cobrados separadamente.",
+       "maps": "https://maps.app.goo.gl/nk15SfwSZbMTBUKi8",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "icon": "car",
+     "title": "The Cars Connection",
+     "body": "Seligman, Hackberry e outras cidades da Route 66 ajudam a contar a história visual que inspirou o universo de Carros."
+    },
+    {
+     "type": "mission",
+     "id": "photo-mission",
+     "eyebrow": "Photo mission",
+     "title": "Checklist fotográfico",
+     "items": [
+      {
+       "id": "foto-roys",
+       "name": "Letreiro do Roy's"
+      },
+      {
+       "id": "foto-burros-oatman",
+       "name": "Burros de Oatman"
+      },
+      {
+       "id": "foto-posto-hackberry",
+       "name": "Posto de Hackberry"
+      },
+      {
+       "id": "foto-carros-seligman",
+       "name": "Carros de Seligman"
+      },
+      {
+       "id": "foto-neon-williams",
+       "name": "Neon noturno de Williams"
+      }
+     ],
+     "unit": "feitas",
+     "doneWord": "Feita"
+    }
+   ]
   },
   {
    "id": "sedona",
@@ -550,6 +921,62 @@ window.TRIP_PHOTOS = {
   "full": "img/joshua-tree/pioneertown-1600.88e32154.jpg",
   "w": 1600,
   "h": 891
+ },
+ "route-66/amboy": {
+  "src": "img/route-66/amboy-800.b3016dcf.jpg",
+  "srcset": "img/route-66/amboy-800.b3016dcf.jpg 800w, img/route-66/amboy-1140.b3016dcf.jpg 1140w",
+  "full": "img/route-66/amboy-1140.b3016dcf.jpg",
+  "w": 1140,
+  "h": 760
+ },
+ "route-66/cool-springs": {
+  "src": "img/route-66/cool-springs-800.ae99496c.jpg",
+  "srcset": "img/route-66/cool-springs-800.ae99496c.jpg 800w, img/route-66/cool-springs-1600.ae99496c.jpg 1600w",
+  "full": "img/route-66/cool-springs-1600.ae99496c.jpg",
+  "w": 1600,
+  "h": 900
+ },
+ "route-66/hackberry": {
+  "src": "img/route-66/hackberry-399.a176deff.jpg",
+  "srcset": "img/route-66/hackberry-399.a176deff.jpg 399w",
+  "full": "img/route-66/hackberry-399.a176deff.jpg",
+  "w": 399,
+  "h": 501
+ },
+ "route-66/hero": {
+  "src": "img/route-66/hero-800.567fe04d.jpg",
+  "srcset": "img/route-66/hero-800.567fe04d.jpg 800w, img/route-66/hero-1200.567fe04d.jpg 1200w",
+  "full": "img/route-66/hero-1200.567fe04d.jpg",
+  "w": 1200,
+  "h": 675
+ },
+ "route-66/kingman": {
+  "src": "img/route-66/kingman-800.0c8864c4.jpg",
+  "srcset": "img/route-66/kingman-800.0c8864c4.jpg 800w, img/route-66/kingman-1500.0c8864c4.jpg 1500w",
+  "full": "img/route-66/kingman-1500.0c8864c4.jpg",
+  "w": 1500,
+  "h": 1000
+ },
+ "route-66/oatman": {
+  "src": "img/route-66/oatman-346.89e07f25.jpg",
+  "srcset": "img/route-66/oatman-346.89e07f25.jpg 346w",
+  "full": "img/route-66/oatman-346.89e07f25.jpg",
+  "w": 346,
+  "h": 578
+ },
+ "route-66/seligman": {
+  "src": "img/route-66/seligman-800.b430ef3b.jpg",
+  "srcset": "img/route-66/seligman-800.b430ef3b.jpg 800w, img/route-66/seligman-1500.b430ef3b.jpg 1500w",
+  "full": "img/route-66/seligman-1500.b430ef3b.jpg",
+  "w": 1500,
+  "h": 1000
+ },
+ "route-66/williams": {
+  "src": "img/route-66/williams-800.f26cba49.jpg",
+  "srcset": "img/route-66/williams-800.f26cba49.jpg 800w, img/route-66/williams-1280.f26cba49.jpg 1280w",
+  "full": "img/route-66/williams-1280.f26cba49.jpg",
+  "w": 1280,
+  "h": 960
  }
 };
-window.TRIP_BUILD = {"version": 2, "date": "10/10/2026 22:25"};
+window.TRIP_BUILD = {"version": 4, "date": "11/10/2026 10:16"};

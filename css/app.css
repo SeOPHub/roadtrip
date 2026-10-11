@@ -572,7 +572,7 @@ a.video:active .video-play { transform: scale(.94); }
   transition: transform var(--t-slow);
 }
 
-.feature-num { display: flex; align-items: baseline; gap: 12px; }
+.feature-num { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
 .feature-num .v { font-size: 56px; line-height: 1; letter-spacing: -.04em; color: var(--amber-hi); font-variant-numeric: tabular-nums; }
 
 .tile {
@@ -862,6 +862,76 @@ a.video:active .video-play { transform: scale(.94); }
 .lightbox-cap { text-align: center; padding: 16px 20px 0; font-size: 13px; color: var(--text-soft); }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes zoom-in { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+
+/* ---------- etapas de estrada (ex.: Route 66) ---------- */
+
+/* jornada: mesma linha do tempo de "Próximas etapas" */
+.journey li { min-height: 52px; }
+.journey .dot { transition: background var(--t-base), border-color var(--t-base); }
+.journey .dot.on, .journey .dot--start { background: var(--amber); border-color: var(--amber); }
+.journey .dot--start { background: var(--text-faint); border-color: var(--text-faint); }
+.journey-go {
+  all: unset;
+  grid-column: 3 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  min-width: 0;
+  cursor: pointer;
+}
+.journey-go:active .name { color: var(--amber-hi); }
+.journey-go:focus-visible { box-shadow: 0 0 0 3px rgba(237, 163, 92, .35); border-radius: 8px; }
+.journey .soon { text-transform: none; letter-spacing: .02em; font-size: 12px; font-variant-numeric: tabular-nums; }
+.journey + .practical + .row-desc { margin: -8px 4px 0; font-size: 14px; }
+
+/* card de parada */
+.stops { display: flex; flex-direction: column; gap: 16px; }
+.stop { overflow: hidden; scroll-margin-top: calc(var(--safe-top) + 64px); }
+.stop-photo {
+  width: 100%;   /* botão em bloco não estica sozinho fora de um contêiner flex */
+  aspect-ratio: 16 / 10;
+  border: 0;
+  border-bottom: 1px solid var(--hair);
+  border-radius: 0;
+  box-shadow: none;
+}
+.stop-photo:active { transform: none; }
+.stop-body { display: flex; flex-direction: column; gap: 14px; padding: 20px; }
+.stop-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 22px; }
+.stop-head .eyebrow { color: var(--amber); }
+.stop-title { margin: 0; font-size: 24px; line-height: 1.15; letter-spacing: -.02em; font-weight: 400; text-wrap: balance; transition: color var(--t-base); }
+.stop.is-visited .stop-title { color: var(--amber-hi); }
+.stop-note {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--hair);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+.stop-note .label-sm { display: inline-flex; align-items: center; gap: 6px; color: var(--amber); }
+.stop-places .row:last-child { border-bottom: 1px solid var(--hair); }
+.stop-places .label-sm { color: var(--text-muted); }
+.stop-foot { display: flex; align-items: center; justify-content: flex-end; gap: 8px; padding-top: 14px; border-top: 1px solid var(--hair); }
+
+/* card editorial */
+.callout { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; padding: 20px; align-items: start; }
+.callout .tile { background: var(--amber-tint); border: 1px solid var(--amber-edge); color: var(--amber); }
+.callout-body { display: flex; flex-direction: column; gap: 8px; }
+
+/* missão fotográfica */
+.mission-icon { display: inline-flex; color: var(--amber); }
+
+/* hospedagem: descrição e observação do banho */
+.plan-desc { font-size: 15px; }
+.shower-wrap { display: flex; flex-direction: column; gap: 6px; }
+.shower-note { font-size: 13px; line-height: 1.4; color: var(--text-muted); padding-left: 84px; }
 
 /* aviso de nova versão */
 .update {
