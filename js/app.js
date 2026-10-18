@@ -2,7 +2,8 @@
    Sem dependências. O gerar.py escreve js/trip-data.js com:
    - window.TRIP_DATA: o roteiro (app/conteudo/roteiro.json);
    - window.TRIP_PHOTOS: as fotos otimizadas encontradas em fotos/, por "<destino>/<espaço>";
-   - window.TRIP_BUILD: número e data da versão gerada. */
+   - window.TRIP_BUILD: número e data da versão gerada;
+   - window.TRIP_TICKETS: ingressos criptografados com senha (privado/ingressos/), por id. */
 (function () {
   'use strict';
 
@@ -10,6 +11,7 @@
   var D = window.TRIP_DATA;
   var PHOTOS = window.TRIP_PHOTOS || {};
   var BUILD = window.TRIP_BUILD || null;
+  var TICKETS = window.TRIP_TICKETS || {};
   var root = document.getElementById('app');
   var visited = loadVisited();
   var io = null;
@@ -88,6 +90,13 @@
     return '<button class="check" type="button" data-visit="' + esc(key) + '" aria-pressed="' + on + '" aria-label="' +
       (on ? 'Desmarcar visitado' : 'Marcar como visitado') + '">' + icon('check', 18) + '</button>';
   }
+  // Ingresso protegido por senha: o botão só aparece quando o gerador criptografou o arquivo.
+  function ticketBtn(p) {
+    if (!p.ticket || !TICKETS[p.ticket]) return '';
+    return '<button class="ticket-btn" type="button" data-ticket="' + esc(p.ticket) + '" data-title="' + esc(p.name) + '">' +
+      icon('ticket', 16) + '<span>Ver ingresso</span>' + icon('lock', 14) + '</button>';
+  }
+
   function visitedTag(key) {
     return key ? '<span class="visited-tag" data-tag="' + esc(key) + '"' + (visited[key] ? '' : ' hidden') + '>Visitado</span>' : '';
   }
@@ -202,6 +211,7 @@
         '<div class="row-title"><span class="row-name">' + esc(p.name) + '</span>' +
           map(p.chips, function (c) { return chip(c, ' chip--sm'); }) + visitedTag(key) + '</div>' +
         (p.desc ? '<span class="row-desc">' + esc(p.desc) + '</span>' : '') +
+        ticketBtn(p) +
       '</div><div class="row-actions">' + actions(p.maps, p.instagram) + checkBtn(key) + '</div></div>';
   }
 
@@ -368,6 +378,7 @@
     });
     return '<section class="section"' + (b.id ? ' id="' + esc(b.id) + '"' : '') + ' data-reveal>' +
       sectionHead(b, keys.length ? progressSpan(keys, b.id || b.title) : '') +
+      (list(b.paragraphs).length ? '<div class="paras">' + map(b.paragraphs, function (p) { return '<p class="body-text">' + esc(p) + '</p>'; }) + '</div>' : '') +
       '<div class="stops">' + cards + '</div>' +
     '</section>';
   }
@@ -415,7 +426,8 @@
         '<span class="video-play">' + icon('play', 20) + '</span>' +
         '<span class="eyebrow">Vídeo de referência</span></div>' +
       '<div class="video-body"><div class="video-title">' + esc(v.title) + '</div>' +
-        (u ? '<span class="video-link">' + icon('youtube') + 'Abrir no YouTube' + icon('arrow-up-right', 14) + '</span>' : '') +
+        (u ? '<span class="video-link">' + icon('youtube') + 'Abrir no YouTube' + icon('arrow-up-right', 14) + '</span>'
+           : '<span class="soon">Link do vídeo pendente</span>') +
       '</div>';
     return u
       ? '<a class="card video" href="' + esc(u) + '" target="_blank" rel="noopener noreferrer" data-reveal>' + inner + '</a>'
@@ -479,7 +491,8 @@
               '<span class="l">' + esc(w.label) + '</span></div>';
           }) + '</div></section>' : '') +
 
-        renderVideo(dest.video, dest.id) +
+        // "video" (um) ou "videos" (lista): mesmo card, um embaixo do outro.
+        map(list(dest.videos).length ? dest.videos : [dest.video], function (v) { return renderVideo(v, dest.id); }) +
         blocks +
 
         '<footer class="foot" data-reveal>' +
@@ -497,7 +510,35 @@
         '<button class="lightbox-close" type="button" aria-label="Fechar">' + icon('x', 18) + '</button>' +
         '<img alt=""><div class="lightbox-cap"></div>' +
       '</div>' +
+      renderVault() +
     '</article>';
+  }
+
+  // Tela de senha + ingresso aberto. O conteúdo só existe na memória depois da senha certa.
+  function renderVault() {
+    var keys = '';
+    ['1', '2', '3', '4', '5', '6', '7', '8', '9', '', '0', 'del'].forEach(function (k) {
+      if (!k) keys += '<span aria-hidden="true"></span>';
+      else if (k === 'del') keys += '<button class="key key--fn" type="button" data-key="del" aria-label="Apagar">' + icon('delete', 26) + '</button>';
+      else keys += '<button class="key" type="button" data-key="' + k + '">' + k + '</button>';
+    });
+    return '<div class="vault" id="vault" role="dialog" aria-modal="true" aria-labelledby="vault-title" tabindex="-1" hidden>' +
+      '<button class="lightbox-close vault-close" type="button" data-vault-close aria-label="Fechar">' + icon('x', 18) + '</button>' +
+      '<div class="vault-lock">' +
+        '<span class="tile vault-tile">' + icon('lock', 24) + '</span>' +
+        '<div class="vault-head"><span class="eyebrow">Ingresso protegido</span><h2 class="vault-title" id="vault-title"></h2></div>' +
+        '<div class="vault-dots" aria-hidden="true"></div>' +
+        '<p class="vault-msg" role="status" aria-live="polite"></p>' +
+        '<div class="keypad">' + keys + '</div>' +
+      '</div>' +
+      '<div class="vault-ticket" hidden>' +
+        '<div class="vault-head"><span class="eyebrow">' + icon('ticket', 14) + 'Ingresso</span><h2 class="vault-title"></h2></div>' +
+        '<div class="ticket-pages"></div>' +
+        '<p class="vault-hint">Aumente o brilho da tela para o QR code ser lido na entrada.</p>' +
+        '<a class="btn-primary vault-pdf" target="_blank" rel="noopener" hidden>' + icon('file-text', 18) + 'Abrir PDF original</a>' +
+        '<button class="vault-done" type="button" data-vault-close>Fechar</button>' +
+      '</div>' +
+    '</div>';
   }
 
   /* ---------- rotas e comportamento ---------- */
@@ -507,6 +548,9 @@
   if (/[?&]slots=1\b/.test(location.search)) document.documentElement.classList.add('show-slots');
 
   function route() {
+    vault.id = null;
+    vault.pin = '';
+    document.documentElement.classList.remove('vault-open');
     var id = location.hash.replace(/^#\/?/, '');
     var dest = D.destinations.filter(function (d) { return d.id === id && d.ready; })[0] || null;
     root.innerHTML = dest ? renderDest(dest) : renderHome();
@@ -592,9 +636,151 @@
     if (lb) lb.hidden = true;
   }
 
+  /* ---------- ingresso protegido por senha ----------
+     O arquivo publicado é cifrado (AES-GCM, chave derivada da senha com PBKDF2-SHA256).
+     A senha não está no app: só a senha certa decifra. O ingresso aberto fica só na memória
+     desta sessão; ao fechar o app, a senha é pedida de novo. */
+
+  var vault = { id: null, pin: '', busy: false, cache: {}, files: {} };
+
+  function vaultEl() { return document.getElementById('vault'); }
+  function pinLength() { return (TICKETS[vault.id] || {}).len || 4; }
+
+  function openVault(id, title) {
+    var v = vaultEl();
+    if (!v || !TICKETS[id]) return;
+    vault.id = id;
+    vault.pin = '';
+    v.querySelectorAll('.vault-title').forEach(function (h) { h.textContent = title; });
+    v.hidden = false;
+    document.documentElement.classList.add('vault-open');
+    if (vault.cache[id]) showTicket(id); else showLock();
+    v.focus({ preventScroll: true });
+  }
+
+  function closeVault() {
+    var v = vaultEl();
+    if (!v || v.hidden) return;
+    v.hidden = true;
+    vault.id = null;
+    vault.pin = '';
+    document.documentElement.classList.remove('vault-open');
+  }
+
+  function showLock() {
+    var v = vaultEl();
+    v.querySelector('.vault-lock').hidden = false;
+    v.querySelector('.vault-ticket').hidden = true;
+    setMsg('Digite a senha para abrir', false);
+    drawDots();
+  }
+
+  function drawDots() {
+    var d = vaultEl().querySelector('.vault-dots'), html = '';
+    for (var i = 0; i < pinLength(); i++) html += '<span' + (i < vault.pin.length ? ' class="on"' : '') + '></span>';
+    d.innerHTML = html;
+    d.classList.toggle('is-busy', vault.busy);
+    vaultEl().querySelector('.keypad').classList.toggle('is-busy', vault.busy);
+  }
+
+  function setMsg(text, wrong) {
+    var m = vaultEl().querySelector('.vault-msg');
+    m.textContent = text;
+    m.classList.toggle('is-wrong', !!wrong);
+  }
+
+  function pressKey(k) {
+    if (vault.busy || !vault.id || vaultEl().querySelector('.vault-lock').hidden) return;
+    if (k === 'del') vault.pin = vault.pin.slice(0, -1);
+    else if (vault.pin.length < pinLength()) vault.pin += k;
+    if (vaultEl().querySelector('.vault-msg.is-wrong')) setMsg('Digite a senha para abrir', false);
+    vaultEl().querySelector('.vault-dots').classList.remove('is-wrong');
+    drawDots();
+    if (vault.pin.length === pinLength()) tryUnlock();
+  }
+
+  function bytesFromB64(s) {
+    var bin = atob(s), out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  function decryptTicket(id, pin) {
+    var t = TICKETS[id];
+    var file = vault.files[id] || fetch(t.file).then(function (r) {
+      if (!r.ok) throw new Error('rede');
+      return r.arrayBuffer();
+    });
+    vault.files[id] = file;
+    return file.then(function (buf) {
+      var b = new Uint8Array(buf), salt = b.slice(0, 16), iv = b.slice(16, 28), data = b.slice(28);
+      return crypto.subtle.importKey('raw', new TextEncoder().encode(pin), 'PBKDF2', false, ['deriveKey'])
+        .then(function (k) {
+          return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: salt, iterations: t.iter, hash: 'SHA-256' },
+            k, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+        })
+        .then(function (key) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, data); });
+    }, function (err) { delete vault.files[id]; throw err; })
+      .then(function (plain) { return JSON.parse(new TextDecoder().decode(plain)); });
+  }
+
+  function tryUnlock() {
+    var id = vault.id, pin = vault.pin;
+    if (!window.crypto || !crypto.subtle) {
+      vault.pin = '';
+      drawDots();
+      setMsg('Abra o app pelo endereço do site (https) para ver o ingresso.', true);
+      return;
+    }
+    vault.busy = true;
+    drawDots();
+    setMsg('Abrindo…', false);
+    decryptTicket(id, pin).then(function (data) {
+      vault.cache[id] = data;
+      vault.busy = false;
+      vault.pin = '';
+      if (vault.id === id) showTicket(id);
+    }, function (err) {
+      vault.busy = false;
+      vault.pin = '';
+      if (vault.id !== id) return;
+      drawDots();
+      var wrong = err && err.name === 'OperationError';
+      setMsg(wrong ? 'Senha incorreta. Tente de novo.' : 'Não consegui abrir o ingresso. Verifique a conexão e tente de novo.', true);
+      if (wrong) {
+        var d = vaultEl().querySelector('.vault-dots');
+        d.classList.remove('is-wrong');
+        if (!reduceMotion) { void d.offsetWidth; d.classList.add('is-wrong'); }
+        if (navigator.vibrate) navigator.vibrate([30, 40, 30]);
+      }
+    });
+  }
+
+  function showTicket(id) {
+    var data = vault.cache[id], v = vaultEl(), tk = v.querySelector('.vault-ticket');
+    v.querySelector('.vault-lock').hidden = true;
+    tk.hidden = false;
+    tk.querySelector('.ticket-pages').innerHTML = map(data.pages, function (p, i) {
+      return '<img src="data:image/jpeg;base64,' + p.jpg + '" width="' + p.w + '" height="' + p.h +
+        '" alt="Ingresso, página ' + (i + 1) + '">';
+    });
+    var a = tk.querySelector('.vault-pdf');
+    if (data.pdf) {
+      if (!data.pdfUrl) data.pdfUrl = URL.createObjectURL(new Blob([bytesFromB64(data.pdf)], { type: 'application/pdf' }));
+      a.href = data.pdfUrl;
+      a.hidden = false;
+    } else {
+      a.hidden = true;
+    }
+    v.scrollTop = 0;
+  }
+
   root.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-visit], [data-photo], [data-scroll], #lightbox, [aria-disabled="true"]');
+    var t = e.target.closest('[data-visit], [data-photo], [data-scroll], [data-ticket], [data-key], [data-vault-close], #lightbox, [aria-disabled="true"]');
     if (!t) return;
+    if (t.hasAttribute('data-ticket')) { openVault(t.getAttribute('data-ticket'), t.getAttribute('data-title') || ''); return; }
+    if (t.hasAttribute('data-key')) { pressKey(t.getAttribute('data-key')); return; }
+    if (t.hasAttribute('data-vault-close')) { closeVault(); return; }
     if (t.hasAttribute('data-scroll')) {
       var target = document.getElementById(t.getAttribute('data-scroll'));
       if (target) target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
@@ -608,7 +794,16 @@
   root.addEventListener('animationend', function (e) {
     if (e.animationName === 'check-ring') e.target.classList.remove('just-checked');
   });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+  document.addEventListener('keydown', function (e) {
+    var v = vaultEl();
+    if (v && !v.hidden) {
+      if (e.key === 'Escape') closeVault();
+      else if (/^[0-9]$/.test(e.key)) { e.preventDefault(); pressKey(e.key); }
+      else if (e.key === 'Backspace') { e.preventDefault(); pressKey('del'); }
+      return;
+    }
+    if (e.key === 'Escape') closeLightbox();
+  });
   window.addEventListener('hashchange', route);
   window.addEventListener('scroll', onScroll, { passive: true });
   function onNet() {

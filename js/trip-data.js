@@ -31,22 +31,22 @@ window.TRIP_DATA = {
    "weather": [
     {
      "date": "29 out",
-     "hi": "23°",
-     "lo": "11°",
-     "label": "parcialmente nublado",
-     "icon": "cloud-sun"
+     "hi": "20°",
+     "lo": "9°",
+     "label": "ensolarado",
+     "icon": "sun"
     },
     {
      "date": "30 out",
-     "hi": "21°",
-     "lo": "7°",
+     "hi": "23°",
+     "lo": "8°",
      "label": "ensolarado",
      "icon": "sun"
     },
     {
      "date": "31 out",
-     "hi": "20°",
-     "lo": "6°",
+     "hi": "25°",
+     "lo": "10°",
      "label": "ensolarado",
      "icon": "sun"
     }
@@ -126,6 +126,21 @@ window.TRIP_DATA = {
        "desc": "Restaurante, bar e casa de música ao vivo, conhecido por apresentações e pela atmosfera western.",
        "maps": "https://maps.app.goo.gl/WxKhWpPFEF842T6h8",
        "instagram": "https://www.instagram.com/pappyandharriets/"
+      },
+      {
+       "id": "pappys-halloween-30out",
+       "label": "Ingresso comprado · sex 30/10",
+       "name": "Pappy & Harriet’s Official Halloween Party — DESIRE + Mothermary + Johnny Jewel",
+       "chips": [
+        {
+         "t": "Confirmado",
+         "tone": "ok"
+        }
+       ],
+       "desc": "Indoor Stage · 53688 Pioneertown Road, Pioneertown, CA · portas 20h30 · show 21h30 (horário local) · General Admission",
+       "maps": "https://maps.app.goo.gl/WxKhWpPFEF842T6h8",
+       "instagram": "https://www.instagram.com/pappyandharriets/",
+       "ticket": "pappys-halloween-30out"
       }
      ]
     },
@@ -490,23 +505,23 @@ window.TRIP_DATA = {
     {
      "date": "1 nov",
      "hi": "19°",
-     "lo": "4°",
-     "label": "nublado",
-     "icon": "cloud"
+     "lo": "3°",
+     "label": "ensolarado",
+     "icon": "sun"
     },
     {
      "date": "2 nov",
-     "hi": "16°",
-     "lo": "4°",
-     "label": "nublado",
-     "icon": "cloud"
-    },
-    {
-     "date": "3 nov",
-     "hi": "16°",
+     "hi": "17°",
      "lo": "3°",
      "label": "parcialmente nublado",
      "icon": "cloud-sun"
+    },
+    {
+     "date": "3 nov",
+     "hi": "18°",
+     "lo": "3°",
+     "label": "nublado",
+     "icon": "cloud"
     }
    ],
    "blocks": [
@@ -755,6 +770,42 @@ window.TRIP_DATA = {
       },
       {
        "letter": "B",
+       "name": "Kaibab Lake Campground",
+       "desc": "Camping oficial para campervan/RV na Kaibab National Forest, perto de Williams, em área arborizada junto ao lago. Alguns sites são por ordem de chegada (registro no local), outros são reserváveis. Confirmar: +1 928-537-8888 · recreation.gov/camping/campgrounds/233957",
+       "shower": 0,
+       "showerMax": 3,
+       "showerNote": "Sem chuveiro confirmado",
+       "facts": [
+        {
+         "icon": "map-pin",
+         "t": "Kaibab National Forest, perto de Williams"
+        },
+        {
+         "icon": "banknote",
+         "t": "US$ 32/noite (referência, + taxa se reservar online)"
+        },
+        {
+         "icon": "calendar",
+         "t": "Temporada 2026 até 31/10"
+        }
+       ],
+       "amenities": [
+        "Sanitários",
+        "Água potável",
+        "Mesas de piquenique",
+        "Área de fogueira"
+       ],
+       "lacks": [
+        "Sem hookups",
+        "Sem estação de descarte",
+        "Não pode encher o tanque da RV"
+       ],
+       "note": "Temporada até 31/10. Considerar apenas se anteciparmos Williams; confirmar se aceita pernoite de 31/10 para 01/11. FCFS sujeito a vagas e clima.",
+       "maps": "https://www.google.com/maps/search/?api=1&query=Kaibab+Lake+Campground%2C+Williams%2C+AZ",
+       "instagram": ""
+      },
+      {
+       "letter": "C",
        "name": "Railside RV Ranch",
        "shower": 3,
        "showerMax": 3,
@@ -777,7 +828,7 @@ window.TRIP_DATA = {
        "instagram": ""
       },
       {
-       "letter": "C",
+       "letter": "D",
        "name": "Love's Travel Stop",
        "shower": 2,
        "showerMax": 3,
@@ -811,7 +862,497 @@ window.TRIP_DATA = {
   },
   {
    "id": "sedona",
-   "name": "Sedona"
+   "ready": true,
+   "name": "Sedona",
+   "places": "Oak Creek Canyon · West Sedona",
+   "distance": "~62 milhas / ~100 km",
+   "drive": "~1h20 de direção",
+   "hero": "hero",
+   "gallery": [
+    {
+     "foto": "red-rocks",
+     "caption": "Red rocks e Oak Creek"
+    },
+    {
+     "foto": "oak-creek-canyon",
+     "caption": "Oak Creek Canyon"
+    },
+    {
+     "foto": "chapel",
+     "caption": "Chapel of the Holy Cross"
+    }
+   ],
+   "weather": [
+    {
+     "date": "2 nov",
+     "hi": "21°",
+     "lo": "7°",
+     "label": "parcialmente ensolarado",
+     "icon": "cloud-sun"
+    },
+    {
+     "date": "3 nov",
+     "hi": "22°",
+     "lo": "7°",
+     "label": "nublado",
+     "icon": "cloud"
+    },
+    {
+     "date": "4 nov",
+     "hi": "21°",
+     "lo": "7°",
+     "label": "parcialmente ensolarado",
+     "icon": "cloud-sun"
+    }
+   ],
+   "videos": [
+    {
+     "title": "O QUE FAZER EM SEDONA EM 3 DIAS 🇺🇸 | ROTEIRO COMPLETO 🌵",
+     "url": "https://www.youtube.com/watch?v=ivDDLRBI7Io",
+     "thumb": "video-1"
+    },
+    {
+     "title": "Perfect Weekend in Sedona, Arizona: Hikes, Food & Natural Water Slides · Through My Lens",
+     "url": "https://www.youtube.com/watch?v=Mkd-PoxQw58",
+     "thumb": "video-2"
+    }
+   ],
+   "blocks": [
+    {
+     "type": "intro",
+     "lead": "Sedona é o ponto da roadtrip onde o deserto encontra montanhas vermelhas, rios, cânions e uma pequena cidade com identidade própria.",
+     "body": "A paisagem é impressionante, mas parte da graça está em não ficar apenas correndo atrás das fotos famosas: explorar o centro, entrar num café, conhecer a cultura local e descobrir a cidade no próprio ritmo."
+    },
+    {
+     "type": "stops",
+     "id": "dia-1",
+     "eyebrow": "Dia 1 · chegada cedo de Williams",
+     "title": "Cathedral Rock e a cidade",
+     "paragraphs": [
+      "Saindo cedo de Williams, a descida por Oak Creek Canyon já é parte do passeio. A chegada antecipada é a chance de começar pela Cathedral Rock e, depois, seguir para a Chapel of the Holy Cross.",
+      "O resto do dia fica para a cidade, sem horário: galerias, cafés e passeio livre, terminando com o pôr do sol em Airport Mesa se a logística do camping permitir."
+     ],
+     "stops": [
+      {
+       "id": "oak-creek-vista",
+       "num": "01",
+       "town": "Oak Creek Vista",
+       "title": "Mirante na chegada",
+       "photo": "oak-creek-vista",
+       "chips": [
+        {
+         "t": "Foto rápida",
+         "icon": "camera"
+        }
+       ],
+       "paragraphs": [
+        "Antes de descer o cânion, uma parada rápida no mirante para a foto: lá de cima se vê a estrada sinuosa da Oak Creek Canyon."
+       ],
+       "maps": "https://maps.app.goo.gl/KYvX1hky5goeNH51A",
+       "instagram": ""
+      },
+      {
+       "id": "cathedral-rock",
+       "num": "02",
+       "town": "Cathedral Rock",
+       "title": "Cathedral Rock Trail",
+       "photo": "cathedral-rock",
+       "chips": [
+        {
+         "t": "Trilha principal",
+         "icon": "star",
+         "tone": "accent"
+        },
+        {
+         "t": "Média/difícil",
+         "tone": "warn"
+        },
+        {
+         "t": "~1h30–2h",
+         "icon": "clock"
+        },
+        {
+         "t": "~2,2 km",
+         "icon": "footprints"
+        }
+       ],
+       "paragraphs": [
+        "A trilha principal do Dia 1. É curta, mas tem trechos íngremes em rocha: nada de caminhada plana. Na sequência, seguir para a Chapel of the Holy Cross."
+       ],
+       "tip": "checar acesso, estacionamento e possíveis regras de shuttle compatíveis com a campervan antes de contar com a vaga.",
+       "maps": "https://maps.app.goo.gl/5N8TQ3GxgH3wspaK9",
+       "instagram": ""
+      },
+      {
+       "id": "chapel",
+       "num": "03",
+       "town": "Holy Cross",
+       "title": "Chapel of the Holy Cross",
+       "photo": "chapel",
+       "paragraphs": [
+        "Visita de arquitetura e de paisagem: a capela fica encaixada nos paredões vermelhos."
+       ],
+       "maps": "https://maps.app.goo.gl/V9Reh34QrF14mBj68",
+       "instagram": ""
+      },
+      {
+       "id": "downtown",
+       "num": "04",
+       "town": "Downtown",
+       "title": "Explorar a cidade",
+       "photo": "downtown",
+       "chips": [
+        {
+         "t": "Sem horário",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "Hora de conhecer Sedona no próprio ritmo. Os lugares abaixo são sugestões para ir encaixando pelo caminho, sem obrigação de passar por todos."
+       ],
+       "places": [
+        {
+         "id": "sedonuts",
+         "name": "Sedonuts",
+         "desc": "Café e donuts.",
+         "maps": "",
+         "instagram": "https://www.instagram.com/sedonutsandcoffee/"
+        },
+        {
+         "id": "tlaquepaque",
+         "name": "Tlaquepaque",
+         "desc": "Complexo de lojas e galerias inspirado na arquitetura de Tlaquepaque, em Jalisco, no México.",
+         "maps": "",
+         "instagram": "https://www.instagram.com/tlaqsedona/"
+        },
+        {
+         "id": "mcdonalds",
+         "name": "McDonald’s dos arcos turquesa",
+         "desc": "A cidade tem regras visuais rígidas para preservar a paisagem das red rocks, e por isso aqui os arcos são turquesa em vez do amarelo tradicional.",
+         "maps": "https://maps.app.goo.gl/8v29ZSck6psa6eLWA",
+         "instagram": ""
+        },
+        {
+         "id": "black-cow-cafe",
+         "name": "Black Cow Café",
+         "desc": "Café no meio das lojinhas.",
+         "maps": "",
+         "instagram": "https://www.instagram.com/blackcowcafe.az/"
+        },
+        {
+         "id": "freeform-cafe",
+         "name": "FreeForm Café",
+         "desc": "Café.",
+         "maps": "",
+         "instagram": "https://www.instagram.com/freeformcoffee/"
+        }
+       ],
+       "maps": "",
+       "instagram": ""
+      },
+      {
+       "id": "airport-mesa",
+       "num": "05",
+       "town": "Airport Mesa",
+       "title": "Pôr do sol em Airport Mesa",
+       "photo": "airport-mesa",
+       "chips": [
+        {
+         "t": "Pôr do sol",
+         "icon": "sunset",
+         "tone": "accent"
+        },
+        {
+         "t": "Opcional"
+        }
+       ],
+       "paragraphs": [
+        "Terminando o passeio pela cidade, considerar o pôr do sol no mirante."
+       ],
+       "tip": "se for preciso achar o dispersed camping na FR-525 antes de escurecer, priorizar a vaga com luz natural. Airport Mesa fica opcional, conforme a logística.",
+       "maps": "https://maps.app.goo.gl/Qmke1x8yLkdp8R4H6",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "id": "onde-comer",
+     "eyebrow": "Noite · brunch",
+     "title": "Onde comer",
+     "paragraphs": [
+      "Sugestões para a noite e para o brunch, não roteiro obrigatório.",
+      "Dica: no fim, até o Chipotle da cidade tem vista linda, rs."
+     ],
+     "places": [
+      {
+       "id": "mariposa",
+       "name": "Mariposa Latin Grill",
+       "desc": "Fine dining.",
+       "chips": [
+        {
+         "t": "TBC · orçamento",
+         "tone": "warn"
+        }
+       ],
+       "maps": "",
+       "instagram": "https://www.instagram.com/mariposa_sedona/"
+      },
+      {
+       "id": "cowboy-club",
+       "name": "Cowboy Club",
+       "desc": "Restaurante temático.",
+       "maps": "",
+       "instagram": "https://www.instagram.com/cowboyclubsedona/"
+      },
+      {
+       "id": "mooneys",
+       "name": "Mooney’s Irish Pub",
+       "desc": "Para uma cerveja à noite.",
+       "maps": "https://maps.app.goo.gl/DrU3G76yxrEKTh1j8",
+       "instagram": ""
+      },
+      {
+       "id": "the-hudson",
+       "name": "The Hudson",
+       "desc": "Restaurante.",
+       "maps": "https://maps.app.goo.gl/6DHDbHFXGrnj71U58",
+       "instagram": ""
+      },
+      {
+       "id": "outlaw-grille",
+       "name": "Outlaw Grille",
+       "maps": "https://maps.app.goo.gl/QTMREFErw6oi3eWs9",
+       "instagram": ""
+      },
+      {
+       "id": "wildcraft",
+       "name": "Wildcraft Kitchen",
+       "desc": "Brunch.",
+       "maps": "",
+       "instagram": "https://www.instagram.com/eatatwildcraft/"
+      }
+     ]
+    },
+    {
+     "type": "stops",
+     "id": "dia-2",
+     "eyebrow": "Dia 2 · West Sedona",
+     "title": "Fay Canyon e Devil’s Bridge",
+     "paragraphs": [
+      "Depois do café, sair cedo para a região das trilhas. A ordem-base é Fay Canyon e depois Devil’s Bridge: Fay faz sentido primeiro se a noite foi no dispersed camping da FR-525, que fica perto.",
+      "Só que Devil’s Bridge é bem mais movimentada, então pode valer inverter e chegar nela no primeiro horário. Entre uma trilha e outra, decidir pelo horário se para para almoçar."
+     ],
+     "stops": [
+      {
+       "id": "fay-canyon",
+       "num": "06",
+       "town": "Fay Canyon",
+       "title": "Fay Canyon Trail",
+       "photo": "fay-canyon",
+       "chips": [
+        {
+         "t": "Fácil",
+         "tone": "ok"
+        },
+        {
+         "t": "~1h–1h30",
+         "icon": "clock"
+        },
+        {
+         "t": "~3,4 km",
+         "icon": "footprints"
+        }
+       ],
+       "paragraphs": [
+        "Primeira trilha da ordem-base, especialmente conveniente quando a noite foi no dispersed camping, pela proximidade."
+       ],
+       "maps": "https://maps.app.goo.gl/pWgZ2v5gWtUPyXtf8",
+       "instagram": ""
+      },
+      {
+       "id": "devils-bridge",
+       "num": "07",
+       "town": "Devil’s Bridge",
+       "title": "Devil’s Bridge Trail",
+       "photo": "devils-bridge",
+       "chips": [
+        {
+         "t": "Fácil/moderada"
+        },
+        {
+         "t": "~2h–2h30",
+         "icon": "clock"
+        },
+        {
+         "t": "~5,0 km",
+         "icon": "footprints"
+        }
+       ],
+       "paragraphs": [
+        "A trilha mais famosa do dia. Os números são da anotação do OneNote: distância e duração mudam conforme o trailhead e o acesso permitido."
+       ],
+       "tip": "por ser muito popular, considerar inverter com Fay Canyon e chegar no primeiro horário. Não dirigir a Transit em trechos 4x4.",
+       "maps": "https://maps.app.goo.gl/u36TssodrTHim3id6",
+       "instagram": ""
+      },
+      {
+       "id": "bell-rock",
+       "num": "08",
+       "town": "Alternativa",
+       "title": "Bell Rock Trail",
+       "photo": "bell-rock",
+       "chips": [
+        {
+         "t": "Alternativa"
+        },
+        {
+         "t": "Fácil",
+         "tone": "ok"
+        },
+        {
+         "t": "~1h–2h",
+         "icon": "clock"
+        },
+        {
+         "t": "~3,6 km",
+         "icon": "footprints"
+        }
+       ],
+       "paragraphs": [
+        "Opção para trocar por uma das trilhas acima se o plano mudar, não um terceiro compromisso. Os números valem para o trecho da base, não para a subida na rocha."
+       ],
+       "maps": "https://maps.app.goo.gl/q4BAu9R2RpFpNPJj6",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "icon": "moon",
+     "title": "Segunda noite em aberto",
+     "body": "Usar o resto do Dia 2 para descansar ou voltar à cidade. Decidir na hora se a segunda noite será em Sedona ou se vale avançar parte do caminho rumo ao Grand Canyon."
+    },
+    {
+     "type": "lodging",
+     "eyebrow": "Onde dormir · Sedona",
+     "title": "Hospedagem",
+     "plans": [
+      {
+       "letter": "A",
+       "featured": true,
+       "tag": "Prioridade · custo",
+       "name": "Dispersed Camping Areas · FR-525",
+       "desc": "Cinco referências marcadas no meu mapa: Nolan, Greasy Spoon, Windmill, Surprise e West Sedona. São as que selecionei, não necessariamente todas as áreas oficiais. Em Sedona essas alternativas são mais escassas.",
+       "shower": 0,
+       "showerMax": 3,
+       "showerNote": "Ducha portátil, conforme as regras do local",
+       "facts": [
+        {
+         "icon": "banknote",
+         "t": "US$ 0 (em área gratuita oficialmente designada)"
+        }
+       ],
+       "lacks": [
+        "Sem banheiro",
+        "Sem chuveiro"
+       ],
+       "note": "Acampar só onde é permitido e sem tratar as áreas como vaga garantida. Respeitar a sinalização, não entrar em estradas OHV/4x4 com a Ford Transit e chegar antes de escurecer.",
+       "maps": "https://maps.app.goo.gl/bWvN62mkLZVLhqDR7",
+       "instagram": ""
+      },
+      {
+       "letter": "B",
+       "name": "Rio Verde RV Park",
+       "shower": 3,
+       "showerMax": 3,
+       "facts": [
+        {
+         "icon": "map-pin",
+         "t": "Cottonwood, ~30 min de Sedona"
+        },
+        {
+         "icon": "banknote",
+         "t": "US$ 33/noite com taxas (cotação)"
+        }
+       ],
+       "amenities": [
+        "Banheiro",
+        "Wi-Fi",
+        "Chuveiro"
+       ],
+       "note": "Reconfirmar tarifa, taxas, disponibilidade e se aceitam a campervan na data da visita.",
+       "maps": "https://maps.app.goo.gl/2p3W473H2DLnqHi79",
+       "instagram": ""
+      },
+      {
+       "letter": "C",
+       "name": "Rancho Sedona RV Park",
+       "shower": 3,
+       "showerMax": 3,
+       "facts": [
+        {
+         "icon": "map-pin",
+         "t": "a localização mais central"
+        },
+        {
+         "icon": "banknote",
+         "t": "US$ 88/noite com taxas (cotação)"
+        }
+       ],
+       "amenities": [
+        "Banheiro",
+        "Wi-Fi",
+        "Chuveiro"
+       ],
+       "note": "Excelente localização, mas preço alto. Reconfirmar tarifa e disponibilidade na data da visita.",
+       "maps": "https://maps.app.goo.gl/CkCdjYGhsD9m2yn68",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "id": "cottonwood",
+     "eyebrow": "Passeio opcional · ~2–3h",
+     "title": "Appendix — Cottonwood",
+     "photo": {
+      "foto": "cottonwood",
+      "caption": "Cottonwood"
+     },
+     "paragraphs": [
+      "Cottonwood é uma pequena cidade do Verde Valley que preserva uma atmosfera típica do interior americano. Antigamente ligada às atividades de mineração de cobre da região, hoje é conhecida como o coração da região vinícola do Arizona.",
+      "Vale mais se a noite for no Rio Verde RV Park ou se sobrar tempo."
+     ],
+     "placesLabel": "Spots",
+     "places": [
+      {
+       "id": "old-town-cottonwood",
+       "label": "A",
+       "name": "Historic Old Town Cottonwood",
+       "desc": "Caminhar pela área histórica e aproveitar cafés e lojas.",
+       "maps": "https://maps.app.goo.gl/MjyaaDnGxjW6oJgU7",
+       "instagram": ""
+      },
+      {
+       "id": "arizona-stronghold",
+       "label": "B",
+       "name": "Arizona Stronghold Vineyards",
+       "desc": "Vinhos locais na tasting room. Degustação às segundas por US$ 10 (anotação do OneNote, a confirmar). Se estiver dirigindo, melhor comprar uma garrafa para mais tarde e não degustar antes de pegar a estrada.",
+       "maps": "https://maps.app.goo.gl/VdejHtbP6LxSUuMt5",
+       "instagram": ""
+      },
+      {
+       "id": "merkin-vineyards",
+       "label": "Ou C",
+       "name": "Merkin Vineyards",
+       "desc": "Alternativa à Arizona Stronghold, sem precisar somar as duas.",
+       "maps": "https://maps.app.goo.gl/5BCfKFmmxnpSX6im8",
+       "instagram": ""
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "grand-canyon",
@@ -897,6 +1438,13 @@ window.TRIP_PHOTOS = {
   "w": 1600,
   "h": 891
  },
+ "joshua-tree/video": {
+  "src": "img/joshua-tree/video-800.da18ea54.jpg",
+  "srcset": "img/joshua-tree/video-800.da18ea54.jpg 800w, img/joshua-tree/video-1280.da18ea54.jpg 1280w",
+  "full": "img/joshua-tree/video-1280.da18ea54.jpg",
+  "w": 1280,
+  "h": 720
+ },
  "route-66/amboy": {
   "src": "img/route-66/amboy-800.b3016dcf.jpg",
   "srcset": "img/route-66/amboy-800.b3016dcf.jpg 800w, img/route-66/amboy-1140.b3016dcf.jpg 1140w",
@@ -952,6 +1500,111 @@ window.TRIP_PHOTOS = {
   "full": "img/route-66/williams-1280.f26cba49.jpg",
   "w": 1280,
   "h": 960
+ },
+ "sedona/airport-mesa": {
+  "src": "img/sedona/airport-mesa-800.05b85194.jpg",
+  "srcset": "img/sedona/airport-mesa-800.05b85194.jpg 800w, img/sedona/airport-mesa-1280.05b85194.jpg 1280w",
+  "full": "img/sedona/airport-mesa-1280.05b85194.jpg",
+  "w": 1280,
+  "h": 750
+ },
+ "sedona/bell-rock": {
+  "src": "img/sedona/bell-rock-800.9de8408a.jpg",
+  "srcset": "img/sedona/bell-rock-800.9de8408a.jpg 800w, img/sedona/bell-rock-1467.9de8408a.jpg 1467w",
+  "full": "img/sedona/bell-rock-1467.9de8408a.jpg",
+  "w": 1467,
+  "h": 2200
+ },
+ "sedona/cathedral-rock": {
+  "src": "img/sedona/cathedral-rock-800.7f749d84.jpg",
+  "srcset": "img/sedona/cathedral-rock-800.7f749d84.jpg 800w, img/sedona/cathedral-rock-1600.7f749d84.jpg 1600w",
+  "full": "img/sedona/cathedral-rock-1600.7f749d84.jpg",
+  "w": 1600,
+  "h": 2399
+ },
+ "sedona/chapel": {
+  "src": "img/sedona/chapel-800.1675d27d.jpg",
+  "srcset": "img/sedona/chapel-800.1675d27d.jpg 800w, img/sedona/chapel-1600.1675d27d.jpg 1600w",
+  "full": "img/sedona/chapel-1600.1675d27d.jpg",
+  "w": 1600,
+  "h": 1067
+ },
+ "sedona/cottonwood": {
+  "src": "img/sedona/cottonwood-800.cae26dc3.jpg",
+  "srcset": "img/sedona/cottonwood-800.cae26dc3.jpg 800w, img/sedona/cottonwood-1200.cae26dc3.jpg 1200w",
+  "full": "img/sedona/cottonwood-1200.cae26dc3.jpg",
+  "w": 1200,
+  "h": 800
+ },
+ "sedona/devils-bridge": {
+  "src": "img/sedona/devils-bridge-452.f0f8cedb.jpg",
+  "srcset": "img/sedona/devils-bridge-452.f0f8cedb.jpg 452w",
+  "full": "img/sedona/devils-bridge-452.f0f8cedb.jpg",
+  "w": 452,
+  "h": 678
+ },
+ "sedona/downtown": {
+  "src": "img/sedona/downtown-678.deea8d31.jpg",
+  "srcset": "img/sedona/downtown-678.deea8d31.jpg 678w",
+  "full": "img/sedona/downtown-678.deea8d31.jpg",
+  "w": 678,
+  "h": 452
+ },
+ "sedona/fay-canyon": {
+  "src": "img/sedona/fay-canyon-800.171143ce.jpg",
+  "srcset": "img/sedona/fay-canyon-800.171143ce.jpg 800w, img/sedona/fay-canyon-1200.171143ce.jpg 1200w",
+  "full": "img/sedona/fay-canyon-1200.171143ce.jpg",
+  "w": 1200,
+  "h": 900
+ },
+ "sedona/hero": {
+  "src": "img/sedona/hero-452.f0f8cedb.jpg",
+  "srcset": "img/sedona/hero-452.f0f8cedb.jpg 452w",
+  "full": "img/sedona/hero-452.f0f8cedb.jpg",
+  "w": 452,
+  "h": 678
+ },
+ "sedona/oak-creek-canyon": {
+  "src": "img/sedona/oak-creek-canyon-800.b71896c2.jpg",
+  "srcset": "img/sedona/oak-creek-canyon-800.b71896c2.jpg 800w, img/sedona/oak-creek-canyon-1600.b71896c2.jpg 1600w",
+  "full": "img/sedona/oak-creek-canyon-1600.b71896c2.jpg",
+  "w": 1600,
+  "h": 1067
+ },
+ "sedona/oak-creek-vista": {
+  "src": "img/sedona/oak-creek-vista-800.53b87ecb.jpg",
+  "srcset": "img/sedona/oak-creek-vista-800.53b87ecb.jpg 800w, img/sedona/oak-creek-vista-1200.53b87ecb.jpg 1200w",
+  "full": "img/sedona/oak-creek-vista-1200.53b87ecb.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "sedona/red-rocks": {
+  "src": "img/sedona/red-rocks-800.8c046a43.jpg",
+  "srcset": "img/sedona/red-rocks-800.8c046a43.jpg 800w, img/sedona/red-rocks-1440.8c046a43.jpg 1440w",
+  "full": "img/sedona/red-rocks-1440.8c046a43.jpg",
+  "w": 1440,
+  "h": 630
+ },
+ "sedona/video-1": {
+  "src": "img/sedona/video-1-800.6bdb18c4.jpg",
+  "srcset": "img/sedona/video-1-800.6bdb18c4.jpg 800w, img/sedona/video-1-1280.6bdb18c4.jpg 1280w",
+  "full": "img/sedona/video-1-1280.6bdb18c4.jpg",
+  "w": 1280,
+  "h": 720
+ },
+ "sedona/video-2": {
+  "src": "img/sedona/video-2-640.8369a7d7.jpg",
+  "srcset": "img/sedona/video-2-640.8369a7d7.jpg 640w",
+  "full": "img/sedona/video-2-640.8369a7d7.jpg",
+  "w": 640,
+  "h": 480
  }
 };
-window.TRIP_BUILD = {"version": 5, "date": "11/10/2026 12:10"};
+window.TRIP_TICKETS = {
+ "pappys-halloween-30out": {
+  "file": "ingressos/pappys-halloween-30out.61c018d6.bin",
+  "iter": 600000,
+  "len": 4
+ }
+};
+window.TRIP_BUILD = {"version": 7, "date": "18/10/2026 00:30"};
