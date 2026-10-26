@@ -1,7 +1,7 @@
 // Offline: guarda o app inteiro no aparelho na primeira visita.
 // Este arquivo é um modelo: o gerar.py preenche a versão e a lista de arquivos.
 // Cada versão gerada tem um cache próprio; ao publicar uma nova, a anterior é descartada.
-const VERSION = 'rt-12-61f7b918';
+const VERSION = 'rt-12-61f7b918-ok';
 const PRECACHE = [
   "./",
   "./css/app.css",
@@ -113,7 +113,7 @@ const PRECACHE = [
   "./img/sedona/video-1-800.6bdb18c4.jpg",
   "./img/sedona/video-2-640.8369a7d7.jpg",
   "./index.html",
-  "./ingressos/pappys-halloween-30out.bd69eb27.bin",
+  "./ingressos/pappys-halloween-30out.61c018d6.bin",
   "./js/app.js",
   "./js/icons.js",
   "./js/trip-data.js",
