@@ -1355,16 +1355,1011 @@ window.TRIP_DATA = {
    ]
   },
   {
-   "id": "grand-canyon",
-   "name": "Grand Canyon"
-  },
-  {
-   "id": "page",
-   "name": "Page"
+   "id": "grand-canyon-page",
+   "ready": true,
+   "name": "Grand Canyon – Page",
+   "places": "South Rim · Desert View · Page",
+   "distance": "~258 milhas / ~415 km",
+   "drive": "~5h00 de direção, sem paradas",
+   "hero": "hero",
+   "gallery": [
+    {
+     "foto": "mather-point",
+     "caption": "Grand Canyon · South Rim"
+    },
+    {
+     "foto": "horseshoe-bend",
+     "caption": "Horseshoe Bend"
+    },
+    {
+     "foto": "watchtower",
+     "caption": "Desert View Watchtower"
+    }
+   ],
+   "weather": [
+    {
+     "date": "4 nov",
+     "hi": "12°",
+     "lo": "-1°",
+     "label": "Grand Canyon · chuva",
+     "icon": "cloud-rain"
+    },
+    {
+     "date": "4 nov",
+     "hi": "17°",
+     "lo": "4°",
+     "label": "Page · nublado",
+     "icon": "cloud"
+    },
+    {
+     "date": "5 nov",
+     "hi": "16°",
+     "lo": "7°",
+     "label": "Page · nublado",
+     "icon": "cloud"
+    }
+   ],
+   "video": {
+    "title": "Van Life in Page Arizona | Perfect 48-Hour Itinerary (Antelope Canyon, Horseshoe Bend & Lake Powell)",
+    "url": "https://www.youtube.com/watch?v=nJ4SL0wxroY",
+    "thumb": "video"
+   },
+   "blocks": [
+    {
+     "type": "intro",
+     "lead": "Saindo das montanhas vermelhas de Sedona, a estrada sobe pela região de Flagstaff até alcançar um dos cenários naturais mais impressionantes do mundo: o Grand Canyon.",
+     "body": "O foco será experimentar a grandeza do cânion caminhando pela sua borda, conhecer sua história geológica e depois cruzar a Desert View Drive em direção a Page. Uma única etapa: começa em Sedona, atravessa o Grand Canyon, termina o dia em Page e continua com alguns passeios na manhã seguinte.",
+     "feature": {
+      "value": "1 noite",
+      "label": "Pernoite em Page"
+     }
+    },
+    {
+     "type": "stops",
+     "id": "momento-a",
+     "eyebrow": "Momento A · Grand Canyon",
+     "title": "A borda sul do cânion",
+     "paragraphs": [
+      "Entrada sul do parque, vindo de Sedona. A van fica no Visitor Center e o cânion é explorado a pé, pela borda.",
+      "Depois da caminhada, a volta é de shuttle até a van e, de carro, a saída pela Desert View Drive, com Navajo Point e Desert View Watchtower em sequência."
+     ],
+     "stops": [
+      {
+       "id": "visitor-center",
+       "num": "01",
+       "town": "Visitor Center",
+       "title": "Grand Canyon Visitor Center",
+       "photo": "visitor-center",
+       "chips": [
+        {
+         "t": "Ponto de partida",
+         "icon": "flag",
+         "tone": "accent"
+        },
+        {
+         "t": "Estacionar a van",
+         "icon": "car"
+        }
+       ],
+       "paragraphs": [
+        "Primeiro ponto de referência ao sair de Sedona pela entrada sul do parque. Estacionar a camper van no Visitor Center e iniciar a caminhada."
+       ],
+       "maps": "https://maps.app.goo.gl/hQ6LUqDwFCnEeAJv9",
+       "instagram": ""
+      },
+      {
+       "id": "rim-trail",
+       "num": "02",
+       "town": "Rim Trail",
+       "title": "Mather Point → Yavapai → Trail of Time → Village",
+       "photo": "rim-trail",
+       "chips": [
+        {
+         "t": "Caminhada contínua",
+         "icon": "footprints",
+         "tone": "accent"
+        },
+        {
+         "t": "Volta de shuttle",
+         "icon": "bus"
+        }
+       ],
+       "paragraphs": [
+        "Uma experiência contínua de caminhada pela borda do cânion, não quatro destinos diferentes. Do Visitor Center até Mather Point são uns 5 minutos a pé; de Mather até o Yavapai Geology Museum, uns 10–15 minutos pelo Rim Trail. Depois, o Trail of Time segue até o Grand Canyon Village.",
+        "Reservar tempo para contemplação e fotografias durante o percurso."
+       ],
+       "map": {
+        "foto": "mapa-trilha",
+        "caption": "Mapa da caminhada"
+       },
+       "tip": "ao chegar ao Historic Village, pegar a Village Route — Blue Line para voltar ao Visitor Center, passando pela região do Train Depot / Grand Canyon Village.",
+       "tipLabel": "Volta de shuttle",
+       "tipIcon": "bus",
+       "places": [
+        {
+         "id": "mather-point",
+         "label": "1",
+         "name": "Mather Point",
+         "desc": "~5 min a pé do Visitor Center.",
+         "maps": "https://www.google.com/maps/search/?api=1&query=Mather+Point,+Grand+Canyon",
+         "instagram": ""
+        },
+        {
+         "id": "yavapai",
+         "label": "2",
+         "name": "Yavapai Geology Museum",
+         "desc": "~10–15 min a pé de Mather, pelo Rim Trail.",
+         "maps": "https://www.google.com/maps/search/?api=1&query=Yavapai+Geology+Museum,+Grand+Canyon",
+         "instagram": ""
+        },
+        {
+         "id": "trail-of-time",
+         "label": "3",
+         "name": "Trail of Time",
+         "desc": "A história geológica do cânion ao longo da borda, até o Village.",
+         "maps": "https://www.google.com/maps/search/?api=1&query=Trail+of+Time,+Grand+Canyon",
+         "instagram": ""
+        },
+        {
+         "id": "grand-canyon-village",
+         "label": "4",
+         "name": "Grand Canyon Village",
+         "desc": "Fim da caminhada, no Historic Village.",
+         "maps": "https://www.google.com/maps/search/?api=1&query=Grand+Canyon+Village+Historic+District",
+         "instagram": ""
+        }
+       ],
+       "maps": "",
+       "instagram": ""
+      },
+      {
+       "id": "navajo-point",
+       "num": "03",
+       "town": "Navajo Point",
+       "title": "Navajo Point",
+       "photo": "navajo-point",
+       "chips": [
+        {
+         "t": "De carro",
+         "icon": "car"
+        },
+        {
+         "t": "Mirante",
+         "icon": "camera"
+        }
+       ],
+       "paragraphs": [
+        "De volta à van, seguir de carro pela Desert View Drive. Navajo Point é a parada logo antes da Desert View Watchtower."
+       ],
+       "maps": "https://maps.app.goo.gl/itDhwUR6YUmVTK6u5",
+       "instagram": ""
+      },
+      {
+       "id": "watchtower",
+       "num": "04",
+       "town": "Desert View",
+       "title": "Desert View Watchtower",
+       "photo": "watchtower",
+       "chips": [
+        {
+         "t": "Na sequência de Navajo Point",
+         "icon": "route"
+        }
+       ],
+       "paragraphs": [
+        "Última parada no parque antes de seguir para Page."
+       ],
+       "tip": "a torre foi concluída em 1932 e projetada pela arquiteta Mary Colter, inspirada em elementos arquitetônicos e artísticos de povos indígenas do sudoeste americano. Por dentro, há pinturas e detalhes que remetem às culturas da região.",
+       "tipLabel": "Curiosidade",
+       "tipIcon": "info",
+       "maps": "https://maps.app.goo.gl/AiiGiaNxY2i36uGA",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "stops",
+     "id": "momento-b",
+     "eyebrow": "Momento B · chegada a Page",
+     "title": "Navajo Bridge e Horseshoe Bend",
+     "paragraphs": [
+      "Saindo do parque, a estrada segue para Page. A Navajo Bridge é uma possibilidade no caminho; Horseshoe Bend é o destaque da chegada."
+     ],
+     "stops": [
+      {
+       "id": "navajo-bridge",
+       "num": "05",
+       "town": "Navajo Bridge",
+       "title": "Navajo Bridge",
+       "photo": "navajo-bridge",
+       "chips": [
+        {
+         "t": "TBC",
+         "tone": "warn"
+        },
+        {
+         "t": "Opcional"
+        },
+        {
+         "t": "Exige desvio",
+         "icon": "route"
+        }
+       ],
+       "paragraphs": [
+        "Uma das pontes históricas mais interessantes do Arizona, construída em 1929 para substituir a antiga travessia por balsa do rio Colorado."
+       ],
+       "tip": "a ponte exige desvio e não entra na distância nem no tempo da rota direta. A decisão de visitá-la será tomada na estrada, conforme o tempo disponível.",
+       "maps": "https://maps.app.goo.gl/8xeWYEPdEtHYzmvj8",
+       "instagram": ""
+      },
+      {
+       "id": "horseshoe-bend",
+       "num": "06",
+       "town": "Horseshoe Bend",
+       "title": "Horseshoe Bend",
+       "photo": "horseshoe-bend",
+       "chips": [
+        {
+         "t": "Highlight",
+         "icon": "star",
+         "tone": "accent"
+        },
+        {
+         "t": "Pôr do sol",
+         "icon": "sunset"
+        },
+        {
+         "t": "Flexível"
+        }
+       ],
+       "paragraphs": [
+        "A principal atração prevista para a chegada em Page. A intenção é aproveitar o pôr do sol, mas nesse horário o mirante costuma receber mais visitantes."
+       ],
+       "tip": "se o dia estiver corrido, Horseshoe Bend pode passar para a manhã seguinte, junto dos passeios em Page.",
+       "maps": "https://maps.app.goo.gl/PYkK2oDD78H8spKSA",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "id": "page-noite",
+     "eyebrow": "Momento B · noite em Page",
+     "title": "Bar / cervejaria",
+     "paragraphs": [
+      "Opção para conhecer uma cervejaria e destilaria local, jantar e aproveitar a noite em Page."
+     ],
+     "places": [
+      {
+       "id": "gc-brewing",
+       "name": "Grand Canyon Brewing + Distillery",
+       "desc": "Local beer / pub.",
+       "maps": "",
+       "instagram": "https://www.instagram.com/gcbrewery_distilling/"
+      }
+     ]
+    },
+    {
+     "type": "lodging",
+     "eyebrow": "Onde dormir · Page",
+     "title": "Hospedagem",
+     "plans": [
+      {
+       "letter": "A",
+       "featured": true,
+       "tag": "Primeira opção",
+       "name": "Beehives Campground",
+       "desc": "Próximo à entrada da trilha para The New Wave.",
+       "shower": 0,
+       "showerMax": 3,
+       "facts": [
+        {
+         "icon": "flag",
+         "t": "Camping oficial"
+        },
+        {
+         "icon": "banknote",
+         "t": "US$ 14/noite"
+        }
+       ],
+       "amenities": [
+        "Banheiro"
+       ],
+       "lacks": [
+        "Sem chuveiro"
+       ],
+       "maps": "https://maps.app.goo.gl/syvKet4j9sE6Jkg4A",
+       "instagram": ""
+      },
+      {
+       "letter": "B",
+       "name": "Parking Page AZ Near Dam",
+       "desc": "Alternativa de estacionamento noturno.",
+       "shower": 0,
+       "showerMax": 3,
+       "facts": [
+        {
+         "icon": "car",
+         "t": "Estacionamento alternativo"
+        },
+        {
+         "icon": "banknote",
+         "t": "Gratuito"
+        }
+       ],
+       "lacks": [
+        "Sem banheiro",
+        "Sem chuveiro"
+       ],
+       "note": "Confirmar no local se o pernoite é autorizado.",
+       "maps": "https://maps.app.goo.gl/yej7NmLLs5S9nUtC8",
+       "instagram": ""
+      },
+      {
+       "letter": "C",
+       "name": "Walmart",
+       "desc": "Alternativa de estacionamento noturno.",
+       "shower": 0,
+       "showerMax": 3,
+       "facts": [
+        {
+         "icon": "car",
+         "t": "Estacionamento alternativo"
+        },
+        {
+         "icon": "banknote",
+         "t": "Gratuito, se autorizado"
+        }
+       ],
+       "amenities": [
+        "Banheiro na loja, durante o funcionamento"
+       ],
+       "lacks": [
+        "Sem chuveiro"
+       ],
+       "note": "Confirmar a autorização de pernoite: estacionamento gratuito não significa permissão automática para dormir.",
+       "maps": "https://maps.app.goo.gl/71kRiVohuUESNFUn7",
+       "instagram": ""
+      },
+      {
+       "letter": "D",
+       "name": "Roam Horseshoe Bend RV Resort",
+       "shower": 3,
+       "showerMax": 3,
+       "facts": [
+        {
+         "icon": "flag",
+         "t": "Camping / RV resort"
+        },
+        {
+         "icon": "banknote",
+         "t": "~US$ 70 com taxas"
+        }
+       ],
+       "amenities": [
+        "Banheiro",
+        "Chuveiro",
+        "Piscina",
+        "Lavanderia"
+       ],
+       "note": "Opção mais estruturada, porém mais cara.",
+       "maps": "https://maps.app.goo.gl/kj6LY6WSA758BTnXA",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "stops",
+     "id": "momento-c",
+     "eyebrow": "Momento C · manhã seguinte em Page",
+     "title": "Passeios curtos, sem ordem fixa",
+     "paragraphs": [
+      "A ordem destes passeios não é fixa: será decidida durante a viagem. Se Horseshoe Bend ficou para hoje, ela entra aqui também."
+     ],
+     "stops": [
+      {
+       "id": "biidi-the-arch",
+       "num": "07",
+       "town": "Shell / Biidi The Arch",
+       "title": "Shell / Biidi The Arch",
+       "photo": "biidi-the-arch",
+       "chips": [
+        {
+         "t": "Visita curta",
+         "icon": "clock"
+        },
+        {
+         "t": "Fotos",
+         "icon": "camera"
+        }
+       ],
+       "paragraphs": [
+        "Formação de arenito próxima ao posto Shell, interessante para uma visita curta e fotografias."
+       ],
+       "maps": "https://maps.app.goo.gl/oweuHZn3chAnMwQTA",
+       "instagram": ""
+      },
+      {
+       "id": "glen-canyon-dam",
+       "num": "08",
+       "town": "Glen Canyon Dam",
+       "title": "Glen Canyon Dam",
+       "photo": "glen-canyon-dam",
+       "chips": [
+        {
+         "t": "Mirante",
+         "icon": "camera"
+        }
+       ],
+       "paragraphs": [
+        "Parada para observar a barragem, a ponte e o rio Colorado."
+       ],
+       "maps": "https://maps.app.goo.gl/gC3CzwDGDT84QMuQ8",
+       "instagram": ""
+      },
+      {
+       "id": "page-sign",
+       "num": "09",
+       "town": "Placa de Page",
+       "title": "City of Page Arizona Sign",
+       "photo": "page-sign",
+       "chips": [
+        {
+         "t": "Parada rápida",
+         "icon": "clock"
+        },
+        {
+         "t": "Foto",
+         "icon": "camera"
+        }
+       ],
+       "paragraphs": [
+        "Parada fotográfica rápida na placa de Page: um ponto de passagem, não uma atração de longa duração."
+       ],
+       "maps": "https://maps.app.goo.gl/sWqVs2KCzNv2QNB7",
+       "instagram": ""
+      },
+      {
+       "id": "new-wave",
+       "num": "10",
+       "town": "The New Wave",
+       "title": "Beehive Trail / The New Wave",
+       "photo": "new-wave",
+       "chips": [
+        {
+         "t": "Caminhada leve",
+         "tone": "ok"
+        },
+        {
+         "t": "Duração flexível",
+         "icon": "clock"
+        },
+        {
+         "t": "Fotos",
+         "icon": "camera"
+        }
+       ],
+       "paragraphs": [
+        "Caminhada leve entre formações de arenito onduladas: uma experiência fotográfica, sem nada de trilha técnica."
+       ],
+       "tip": "o Beehives Campground (Plano A) fica perto do acesso à trilha, o que facilita a logística se a noite for lá.",
+       "maps": "https://maps.app.goo.gl/iDJhnxxhkiykdMPVA",
+       "instagram": ""
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "monument-valley",
-   "name": "Monument Valley"
+   "ready": true,
+   "name": "Monument Valley",
+   "places": "US-163 · Mexican Hat · Goosenecks",
+   "distance": "~124 milhas / ~200 km",
+   "drive": "~2h00 de direção desde Page",
+   "hero": "hero",
+   "gallery": [
+    {
+     "foto": "the-mittens",
+     "caption": "The Mittens & Merrick Butte"
+    },
+    {
+     "foto": "forrest-gump-point",
+     "caption": "Forrest Gump Point · US-163"
+    },
+    {
+     "foto": "goosenecks",
+     "caption": "Goosenecks · rio San Juan"
+    }
+   ],
+   "weather": [
+    {
+     "date": "5 nov",
+     "hi": "18°",
+     "lo": "2°",
+     "label": "sol, poucas nuvens",
+     "icon": "sun"
+    },
+    {
+     "date": "6 nov",
+     "hi": "12°",
+     "lo": "1°",
+     "label": "sol, mais frio",
+     "icon": "sun"
+    },
+    {
+     "date": "7 nov",
+     "hi": "12°",
+     "lo": "1°",
+     "label": "ensolarado",
+     "icon": "sun"
+    }
+   ],
+   "video": {
+    "title": "MONUMENT VALLEY Tribal Loop & Forrest Gump Point | Amazing BUTTES & DRIVE-THRU Experience · Keep up with Car",
+    "url": "https://www.youtube.com/watch?v=pMvPOiJeQvs",
+    "thumb": "video"
+   },
+   "blocks": [
+    {
+     "type": "intro",
+     "lead": "Monument Valley fica dentro da Navajo Nation, e o nome Navajo é Tsé Bii’ Ndzisgaii, algo como “vale das rochas”.",
+     "body": "O motivo de as formações parecerem tão familiares provavelmente é Hollywood: em 1939, John Ford filmou Stagecoach ali e ajudou a transformar Monument Valley na imagem mental que o mundo passou a associar ao “Velho Oeste”. Décadas depois vieram Forrest Gump, Back to the Future Part III, Transformers, Easy Rider e até Doctor Who.",
+     "feature": {
+      "value": "1939",
+      "label": "Stagecoach, de John Ford"
+     }
+    },
+    {
+     "type": "callout",
+     "icon": "sunrise",
+     "title": "Cenário A · principal",
+     "body": "Dormir uma segunda noite em Page, sair cedo e chegar a Monument Valley pela manhã. Avaliar o tour Navajo no local, seguir por Forrest Gump Point e Mexican Hat; Goosenecks e Valley of the Gods ficam opcionais. Pernoite preferencial: Moab."
+    },
+    {
+     "type": "callout",
+     "icon": "clock",
+     "title": "Cenário B · alternativo",
+     "body": "Aproveitar Page pela manhã e sair por volta do meio-dia, chegando a Monument Valley por volta das 14h–14h30. Fazer o que for possível no parque, seguir por Forrest Gump Point e Mexican Hat e avaliar Goosenecks ou Bluff para o pernoite, em vez de dirigir obrigatoriamente até Moab. A noite extra em Page não é decisão fixa: escolher na hora."
+    },
+    {
+     "type": "stops",
+     "id": "no-parque",
+     "eyebrow": "Navajo Nation · Monument Valley",
+     "title": "O vale das rochas",
+     "paragraphs": [
+      "Da divisa entre Arizona e Utah até o Visitor Center, com a vista clássica das Mittens. O circuito interno (Tribal Loop) é decisão a tomar no local."
+     ],
+     "stops": [
+      {
+       "id": "utah-welcome-sign",
+       "num": "01",
+       "town": "Divisa AZ · UT",
+       "title": "Utah Welcome Sign",
+       "photo": "utah-sign",
+       "chips": [
+        {
+         "t": "Photo stop",
+         "icon": "camera",
+         "tone": "accent"
+        },
+        {
+         "t": "Parada rápida",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "Antes de chegar ao Visitor Center, a estrada cruza a divisa entre Arizona e Utah: parada curta para a foto na placa, sem horário."
+       ],
+       "maps": "https://maps.app.goo.gl/FhPLBoSzVzN3a8fYA",
+       "instagram": ""
+      },
+      {
+       "id": "visitor-center",
+       "num": "02",
+       "town": "Visitor Center",
+       "title": "Monument Valley Visitor Center",
+       "photo": "the-mittens",
+       "chips": [
+        {
+         "t": "Must",
+         "icon": "star",
+         "tone": "accent"
+        },
+        {
+         "t": "West & East Mitten · Merrick Butte",
+         "icon": "camera"
+        }
+       ],
+       "paragraphs": [
+        "Primeira parada principal do capítulo: a vista clássica dos três monumentos, West Mitten, East Mitten e Merrick Butte.",
+        "Funciona como mirante, estrutura de visitantes e referência para contratar um tour Navajo, se fizer sentido no dia."
+       ],
+       "notes": [
+        {
+         "label": "Ford Transit",
+         "icon": "car",
+         "t": "camper vans e RVs não devem entrar na Valley Drive, a estrada de terra da Tribal Loop. A van vai normalmente até o Visitor Center e fica na área de estacionamento permitida; o circuito interno, só com tour guiado em veículo apropriado."
+        },
+        {
+         "label": "Horários e valores · a confirmar",
+         "icon": "clock",
+         "t": "horário de inverno de referência: 08h00–17h00. Última entrada na Scenic Drive: 14h30. Valores de entrada e de tour a confirmar no local; nada reservado."
+        }
+       ],
+       "maps": "https://maps.app.goo.gl/nByFduwAPTW0LBDY8",
+       "instagram": ""
+      },
+      {
+       "id": "tribal-loop",
+       "num": "03",
+       "town": "Tribal Loop",
+       "title": "Tribal Loop · tour Navajo",
+       "photo": "tribal-loop",
+       "chips": [
+        {
+         "t": "TBC",
+         "tone": "warn"
+        },
+        {
+         "t": "Experiência opcional"
+        },
+        {
+         "t": "Só com tour guiado",
+         "icon": "car"
+        }
+       ],
+       "paragraphs": [
+        "Decisão a tomar pessoalmente no Visitor Center, conforme disponibilidade, preço, condições e tempo restante. Não é obrigatório e não há tour reservado.",
+        "Hotspots do circuito, para marcar conforme forem aparecendo:"
+       ],
+       "map": {
+        "foto": "mapa-scenic-drive",
+        "caption": "The Monument Valley Scenic Drive"
+       },
+       "tip": "o mapa é referência visual das formações, não uma rota para a Ford Transit.",
+       "tipLabel": "Mapa",
+       "tipIcon": "map",
+       "places": [
+        {
+         "id": "tl-the-mittens-merrick-butte",
+         "name": "The Mittens & Merrick Butte",
+         "links": false
+        },
+        {
+         "id": "tl-elephant-butte",
+         "name": "Elephant Butte",
+         "links": false
+        },
+        {
+         "id": "tl-the-three-sisters",
+         "name": "The Three Sisters",
+         "links": false
+        },
+        {
+         "id": "tl-john-fords-point",
+         "name": "John Ford's Point",
+         "links": false
+        },
+        {
+         "id": "tl-camel-butte",
+         "name": "Camel Butte",
+         "links": false
+        },
+        {
+         "id": "tl-rain-god-mesa",
+         "name": "Rain God Mesa",
+         "links": false
+        },
+        {
+         "id": "tl-thunderbird-mesa",
+         "name": "Thunderbird Mesa",
+         "links": false
+        },
+        {
+         "id": "tl-totem-pole-yei-bi-chei",
+         "name": "Totem Pole & Yei Bi Chei",
+         "links": false
+        },
+        {
+         "id": "tl-spearhead-mesa",
+         "name": "Spearhead Mesa",
+         "links": false
+        },
+        {
+         "id": "tl-north-window",
+         "name": "North Window",
+         "links": false
+        },
+        {
+         "id": "tl-the-thumb",
+         "name": "The Thumb",
+         "links": false
+        }
+       ],
+       "maps": "",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "id": "photo-mission-looney-tunes",
+     "eyebrow": "Photo mission",
+     "title": "Photo Mission — Looney Tunes",
+     "photo": {
+      "foto": "looney-tunes",
+      "caption": "Referência · Wile E. Coyote e Papa-Léguas em Monument Valley"
+     },
+     "paragraphs": [
+      "Reproduzir a fotografia dos Looney Tunes alinhando a imagem dos personagens com as formações de Monument Valley."
+     ],
+     "places": [
+      {
+       "id": "photo-mission-looney-tunes",
+       "name": "Foto dos Looney Tunes",
+       "desc": "Marcar quando a foto estiver feita.",
+       "chips": [
+        {
+         "t": "Missão",
+         "icon": "camera",
+         "tone": "accent"
+        }
+       ],
+       "links": false
+      }
+     ]
+    },
+    {
+     "type": "stops",
+     "id": "us-163",
+     "eyebrow": "Saindo do parque · US-163",
+     "title": "Forrest Gump Point e Mexican Hat",
+     "paragraphs": [
+      "Depois de Monument Valley, seguir pela US-163 rumo ao norte. Os tempos e a distância do topo valem só para Page → Monument Valley; daqui em diante, o ritmo do dia decide."
+     ],
+     "stops": [
+      {
+       "id": "forrest-gump-point",
+       "num": "04",
+       "town": "Forrest Gump Point",
+       "title": "Forrest Gump Point",
+       "photo": "forrest-gump-point",
+       "chips": [
+        {
+         "t": "Must",
+         "icon": "star",
+         "tone": "accent"
+        },
+        {
+         "t": "US-163",
+         "icon": "route"
+        },
+        {
+         "t": "Cena de filme",
+         "icon": "play"
+        }
+       ],
+       "paragraphs": [
+        "A estrada clássica, reta, com as formações de Monument Valley ao fundo: um dos pontos mais importantes do capítulo.",
+        "No filme, depois de correr por 3 anos, 2 meses, 14 dias e 16 horas, Forrest chega à US-163 e decide interromper a corrida."
+       ],
+       "notes": [
+        {
+         "label": "Photo mission",
+         "icon": "camera",
+         "t": "reproduzir o enquadramento da estrada reta em direção a Monument Valley, sempre a partir de um ponto seguro de parada, sem ficar no meio da rodovia."
+        }
+       ],
+       "video": {
+        "eyebrow": "Cena do filme",
+        "title": "I'm pretty tired | Forrest Gump",
+        "url": "https://www.youtube.com/watch?v=mDGICRwzAjk",
+        "thumb": "video-forrest-gump"
+       },
+       "maps": "https://maps.app.goo.gl/C2oPuKarxqGPNZsU8",
+       "instagram": ""
+      },
+      {
+       "id": "mexican-hat",
+       "num": "05",
+       "town": "Mexican Hat",
+       "title": "Mexican Hat",
+       "photo": "mexican-hat",
+       "chips": [
+        {
+         "t": "Photo stop",
+         "icon": "camera",
+         "tone": "accent"
+        },
+        {
+         "t": "Parada rápida",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "Parada rápida depois de Forrest Gump Point: a formação parece um sombrero mexicano equilibrado sobre uma coluna de arenito. É só passagem para foto, sem trilha."
+       ],
+       "maps": "https://maps.app.goo.gl/wvKF6Jz1sv19JW9M7",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "stops",
+     "id": "opcionais",
+     "eyebrow": "Se houver tempo · rumo a Moab",
+     "title": "Opcionais · TBC",
+     "paragraphs": [
+      "Nenhum dos dois é obrigatório nem entra na rota principal. Se o tempo ou o interesse não fecharem, seguir direto para Moab."
+     ],
+     "stops": [
+      {
+       "id": "goosenecks",
+       "num": "06",
+       "town": "Goosenecks",
+       "title": "Goosenecks State Park",
+       "photo": "goosenecks",
+       "chips": [
+        {
+         "t": "TBC",
+         "tone": "warn"
+        },
+        {
+         "t": "Opcional"
+        },
+        {
+         "t": "US$ 5/veículo",
+         "icon": "banknote"
+        },
+        {
+         "t": "Aberto 24h",
+         "icon": "clock"
+        }
+       ],
+       "paragraphs": [
+        "Primeiro ponto opcional depois de Mexican Hat. O rio San Juan forma grandes curvas dentro de um cânion profundo, como uma sequência de Horseshoe Bends.",
+        "Se houver tempo e interesse, visitar o mirante; caso contrário, seguir para Moab."
+       ],
+       "tip": "entrada diurna de US$ 5 por veículo e parque aberto 24 horas, segundo o OneNote: confirmar no local. O parque também tem camping (Plano A da hospedagem).",
+       "maps": "https://maps.app.goo.gl/mXoEH2uwXp7cm6s19",
+       "instagram": ""
+      },
+      {
+       "id": "valley-of-the-gods",
+       "num": "07",
+       "town": "Valley of the Gods",
+       "title": "Valley of the Gods",
+       "photo": "valley-of-the-gods",
+       "chips": [
+        {
+         "t": "TBC",
+         "tone": "warn"
+        },
+        {
+         "t": "Opcional"
+        },
+        {
+         "t": "Estrada de terra · ~17 mi",
+         "icon": "route"
+        }
+       ],
+       "paragraphs": [
+        "Segundo ponto opcional, depois da região de Goosenecks, dependendo do tempo disponível.",
+        "A Valley of the Gods Road é um circuito não pavimentado de aproximadamente 17 milhas, com cascalho, argila e travessias de leitos de drenagem."
+       ],
+       "notes": [
+        {
+         "label": "Só fazer o circuito se",
+         "icon": "info",
+         "t": "o clima estiver favorável, a estrada estiver transitável, o contrato da locadora permitir esse tipo de condução e a Ford Transit for adequada às condições observadas. Se qualquer condição falhar, fica só o pin como referência, sem fazer o circuito."
+        }
+       ],
+       "places": [
+        {
+         "id": "votg-seven-sailors",
+         "name": "Seven Sailors",
+         "links": false
+        },
+        {
+         "id": "votg-setting-hen-butte",
+         "name": "Setting Hen Butte",
+         "links": false
+        },
+        {
+         "id": "votg-battleship-rock",
+         "name": "Battleship Rock",
+         "links": false
+        },
+        {
+         "id": "votg-rooster-butte",
+         "name": "Rooster Butte",
+         "links": false
+        },
+        {
+         "id": "votg-castle-butte",
+         "name": "Castle Butte",
+         "links": false
+        },
+        {
+         "id": "votg-lady-in-the-bathtub",
+         "name": "Lady in the Bathtub",
+         "links": false
+        }
+       ],
+       "maps": "https://maps.app.goo.gl/5tSUAEBK1J32TzPi8",
+       "instagram": ""
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "icon": "moon",
+     "title": "Pernoite preferencial: Moab",
+     "body": "No cenário principal, a noite é em Moab. As duas opções abaixo só entram se a saída de Page for tarde e fizer mais sentido dormir perto de Monument Valley."
+    },
+    {
+     "type": "lodging",
+     "eyebrow": "Onde dormir · só se não seguir para Moab",
+     "title": "Hospedagem",
+     "plans": [
+      {
+       "letter": "A",
+       "name": "Goosenecks Campground",
+       "desc": "Junto ao mirante do rio San Juan.",
+       "shower": 0,
+       "showerMax": 5,
+       "facts": [
+        {
+         "icon": "flag",
+         "t": "Camping primitivo"
+        },
+        {
+         "icon": "banknote",
+         "t": "US$ 10/noite"
+        },
+        {
+         "icon": "clock",
+         "t": "First-come, first-served"
+        }
+       ],
+       "amenities": [
+        "Banheiro seco"
+       ],
+       "lacks": [
+        "Sem chuveiro",
+        "Sem água corrente"
+       ],
+       "maps": "https://maps.app.goo.gl/oCPQ5aA8hBZFkDKn6",
+       "instagram": ""
+      },
+      {
+       "letter": "B",
+       "name": "Cadillac Ranch RV Park — Bluff",
+       "desc": "Alternativa mais confortável para dormir depois de um dia longo.",
+       "shower": 5,
+       "showerMax": 5,
+       "facts": [
+        {
+         "icon": "map-pin",
+         "t": "Bluff, Utah"
+        },
+        {
+         "icon": "banknote",
+         "t": "~US$ 50/noite (orçamento do OneNote)"
+        }
+       ],
+       "amenities": [
+        "Banheiros",
+        "Chuveiro"
+       ],
+       "note": "Preço sujeito à disponibilidade e à categoria da vaga.",
+       "maps": "https://maps.app.goo.gl/NF71Zrbh1TY4obVs9",
+       "instagram": ""
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "moab",
@@ -1389,6 +2384,104 @@ window.TRIP_DATA = {
  ]
 };
 window.TRIP_PHOTOS = {
+ "grand-canyon-page/biidi-the-arch": {
+  "src": "img/grand-canyon-page/biidi-the-arch-547.453bfbd9.jpg",
+  "srcset": "img/grand-canyon-page/biidi-the-arch-547.453bfbd9.jpg 547w",
+  "full": "img/grand-canyon-page/biidi-the-arch-547.453bfbd9.jpg",
+  "w": 547,
+  "h": 365
+ },
+ "grand-canyon-page/glen-canyon-dam": {
+  "src": "img/grand-canyon-page/glen-canyon-dam-800.d9e8b8b9.jpg",
+  "srcset": "img/grand-canyon-page/glen-canyon-dam-800.d9e8b8b9.jpg 800w, img/grand-canyon-page/glen-canyon-dam-1600.d9e8b8b9.jpg 1600w",
+  "full": "img/grand-canyon-page/glen-canyon-dam-1600.d9e8b8b9.jpg",
+  "w": 1600,
+  "h": 1201
+ },
+ "grand-canyon-page/hero": {
+  "src": "img/grand-canyon-page/hero-800.28b7299c.jpg",
+  "srcset": "img/grand-canyon-page/hero-800.28b7299c.jpg 800w, img/grand-canyon-page/hero-1600.28b7299c.jpg 1600w",
+  "full": "img/grand-canyon-page/hero-1600.28b7299c.jpg",
+  "w": 1600,
+  "h": 1060
+ },
+ "grand-canyon-page/horseshoe-bend": {
+  "src": "img/grand-canyon-page/horseshoe-bend-800.4f109e99.jpg",
+  "srcset": "img/grand-canyon-page/horseshoe-bend-800.4f109e99.jpg 800w, img/grand-canyon-page/horseshoe-bend-1600.4f109e99.jpg 1600w",
+  "full": "img/grand-canyon-page/horseshoe-bend-1600.4f109e99.jpg",
+  "w": 1600,
+  "h": 900
+ },
+ "grand-canyon-page/mapa-trilha": {
+  "src": "img/grand-canyon-page/mapa-trilha-800.8cc27536.jpg",
+  "srcset": "img/grand-canyon-page/mapa-trilha-800.8cc27536.jpg 800w, img/grand-canyon-page/mapa-trilha-985.8cc27536.jpg 985w",
+  "full": "img/grand-canyon-page/mapa-trilha-985.8cc27536.jpg",
+  "w": 985,
+  "h": 344
+ },
+ "grand-canyon-page/mather-point": {
+  "src": "img/grand-canyon-page/mather-point-800.e724e843.jpg",
+  "srcset": "img/grand-canyon-page/mather-point-800.e724e843.jpg 800w, img/grand-canyon-page/mather-point-1200.e724e843.jpg 1200w",
+  "full": "img/grand-canyon-page/mather-point-1200.e724e843.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "grand-canyon-page/navajo-bridge": {
+  "src": "img/grand-canyon-page/navajo-bridge-800.aa6ff630.jpg",
+  "srcset": "img/grand-canyon-page/navajo-bridge-800.aa6ff630.jpg 800w, img/grand-canyon-page/navajo-bridge-1400.aa6ff630.jpg 1400w",
+  "full": "img/grand-canyon-page/navajo-bridge-1400.aa6ff630.jpg",
+  "w": 1400,
+  "h": 1002
+ },
+ "grand-canyon-page/navajo-point": {
+  "src": "img/grand-canyon-page/navajo-point-800.1a34b15a.jpg",
+  "srcset": "img/grand-canyon-page/navajo-point-800.1a34b15a.jpg 800w, img/grand-canyon-page/navajo-point-1600.1a34b15a.jpg 1600w",
+  "full": "img/grand-canyon-page/navajo-point-1600.1a34b15a.jpg",
+  "w": 1600,
+  "h": 900
+ },
+ "grand-canyon-page/new-wave": {
+  "src": "img/grand-canyon-page/new-wave-800.2fda0d7b.jpg",
+  "srcset": "img/grand-canyon-page/new-wave-800.2fda0d7b.jpg 800w, img/grand-canyon-page/new-wave-1600.2fda0d7b.jpg 1600w",
+  "full": "img/grand-canyon-page/new-wave-1600.2fda0d7b.jpg",
+  "w": 1600,
+  "h": 1200
+ },
+ "grand-canyon-page/page-sign": {
+  "src": "img/grand-canyon-page/page-sign-800.52bb8478.jpg",
+  "srcset": "img/grand-canyon-page/page-sign-800.52bb8478.jpg 800w, img/grand-canyon-page/page-sign-1600.52bb8478.jpg 1600w",
+  "full": "img/grand-canyon-page/page-sign-1600.52bb8478.jpg",
+  "w": 1600,
+  "h": 900
+ },
+ "grand-canyon-page/rim-trail": {
+  "src": "img/grand-canyon-page/rim-trail-800.8e87149d.jpg",
+  "srcset": "img/grand-canyon-page/rim-trail-800.8e87149d.jpg 800w, img/grand-canyon-page/rim-trail-1200.8e87149d.jpg 1200w",
+  "full": "img/grand-canyon-page/rim-trail-1200.8e87149d.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "grand-canyon-page/video": {
+  "src": "img/grand-canyon-page/video-800.07fe5910.jpg",
+  "srcset": "img/grand-canyon-page/video-800.07fe5910.jpg 800w, img/grand-canyon-page/video-1280.07fe5910.jpg 1280w",
+  "full": "img/grand-canyon-page/video-1280.07fe5910.jpg",
+  "w": 1280,
+  "h": 720
+ },
+ "grand-canyon-page/visitor-center": {
+  "src": "img/grand-canyon-page/visitor-center-800.72f542db.jpg",
+  "srcset": "img/grand-canyon-page/visitor-center-800.72f542db.jpg 800w, img/grand-canyon-page/visitor-center-1600.72f542db.jpg 1600w",
+  "full": "img/grand-canyon-page/visitor-center-1600.72f542db.jpg",
+  "w": 1600,
+  "h": 724
+ },
+ "grand-canyon-page/watchtower": {
+  "src": "img/grand-canyon-page/watchtower-800.21944f22.jpg",
+  "srcset": "img/grand-canyon-page/watchtower-800.21944f22.jpg 800w, img/grand-canyon-page/watchtower-1200.21944f22.jpg 1200w",
+  "full": "img/grand-canyon-page/watchtower-1200.21944f22.jpg",
+  "w": 1200,
+  "h": 758
+ },
  "joshua-tree/barker-dam": {
   "src": "img/joshua-tree/barker-dam-724.a7d0cb12.jpg",
   "srcset": "img/joshua-tree/barker-dam-724.a7d0cb12.jpg 724w",
@@ -1442,6 +2535,90 @@ window.TRIP_PHOTOS = {
   "src": "img/joshua-tree/video-800.da18ea54.jpg",
   "srcset": "img/joshua-tree/video-800.da18ea54.jpg 800w, img/joshua-tree/video-1280.da18ea54.jpg 1280w",
   "full": "img/joshua-tree/video-1280.da18ea54.jpg",
+  "w": 1280,
+  "h": 720
+ },
+ "monument-valley/forrest-gump-point": {
+  "src": "img/monument-valley/forrest-gump-point-800.8c685327.jpg",
+  "srcset": "img/monument-valley/forrest-gump-point-800.8c685327.jpg 800w, img/monument-valley/forrest-gump-point-1080.8c685327.jpg 1080w",
+  "full": "img/monument-valley/forrest-gump-point-1080.8c685327.jpg",
+  "w": 1080,
+  "h": 1350
+ },
+ "monument-valley/goosenecks": {
+  "src": "img/monument-valley/goosenecks-800.2845221d.jpg",
+  "srcset": "img/monument-valley/goosenecks-800.2845221d.jpg 800w, img/monument-valley/goosenecks-1280.2845221d.jpg 1280w",
+  "full": "img/monument-valley/goosenecks-1280.2845221d.jpg",
+  "w": 1280,
+  "h": 800
+ },
+ "monument-valley/hero": {
+  "src": "img/monument-valley/hero-800.aa361298.jpg",
+  "srcset": "img/monument-valley/hero-800.aa361298.jpg 800w, img/monument-valley/hero-1600.aa361298.jpg 1600w",
+  "full": "img/monument-valley/hero-1600.aa361298.jpg",
+  "w": 1600,
+  "h": 2240
+ },
+ "monument-valley/looney-tunes": {
+  "src": "img/monument-valley/looney-tunes-734.ec3efe75.jpg",
+  "srcset": "img/monument-valley/looney-tunes-734.ec3efe75.jpg 734w",
+  "full": "img/monument-valley/looney-tunes-734.ec3efe75.jpg",
+  "w": 734,
+  "h": 805
+ },
+ "monument-valley/mapa-scenic-drive": {
+  "src": "img/monument-valley/mapa-scenic-drive-720.232eb0c5.jpg",
+  "srcset": "img/monument-valley/mapa-scenic-drive-720.232eb0c5.jpg 720w",
+  "full": "img/monument-valley/mapa-scenic-drive-720.232eb0c5.jpg",
+  "w": 720,
+  "h": 540
+ },
+ "monument-valley/mexican-hat": {
+  "src": "img/monument-valley/mexican-hat-640.e83da0c8.jpg",
+  "srcset": "img/monument-valley/mexican-hat-640.e83da0c8.jpg 640w",
+  "full": "img/monument-valley/mexican-hat-640.e83da0c8.jpg",
+  "w": 640,
+  "h": 480
+ },
+ "monument-valley/the-mittens": {
+  "src": "img/monument-valley/the-mittens-800.838f582d.jpg",
+  "srcset": "img/monument-valley/the-mittens-800.838f582d.jpg 800w, img/monument-valley/the-mittens-1600.838f582d.jpg 1600w",
+  "full": "img/monument-valley/the-mittens-1600.838f582d.jpg",
+  "w": 1600,
+  "h": 1200
+ },
+ "monument-valley/tribal-loop": {
+  "src": "img/monument-valley/tribal-loop-800.1308af43.jpg",
+  "srcset": "img/monument-valley/tribal-loop-800.1308af43.jpg 800w, img/monument-valley/tribal-loop-1600.1308af43.jpg 1600w",
+  "full": "img/monument-valley/tribal-loop-1600.1308af43.jpg",
+  "w": 1600,
+  "h": 1065
+ },
+ "monument-valley/utah-sign": {
+  "src": "img/monument-valley/utah-sign-800.f8a1cf64.jpg",
+  "srcset": "img/monument-valley/utah-sign-800.f8a1cf64.jpg 800w, img/monument-valley/utah-sign-1440.f8a1cf64.jpg 1440w",
+  "full": "img/monument-valley/utah-sign-1440.f8a1cf64.jpg",
+  "w": 1440,
+  "h": 2560
+ },
+ "monument-valley/valley-of-the-gods": {
+  "src": "img/monument-valley/valley-of-the-gods-547.4da32720.jpg",
+  "srcset": "img/monument-valley/valley-of-the-gods-547.4da32720.jpg 547w",
+  "full": "img/monument-valley/valley-of-the-gods-547.4da32720.jpg",
+  "w": 547,
+  "h": 365
+ },
+ "monument-valley/video": {
+  "src": "img/monument-valley/video-800.792f4b2b.jpg",
+  "srcset": "img/monument-valley/video-800.792f4b2b.jpg 800w, img/monument-valley/video-1280.792f4b2b.jpg 1280w",
+  "full": "img/monument-valley/video-1280.792f4b2b.jpg",
+  "w": 1280,
+  "h": 720
+ },
+ "monument-valley/video-forrest-gump": {
+  "src": "img/monument-valley/video-forrest-gump-800.b4fdd3f3.jpg",
+  "srcset": "img/monument-valley/video-forrest-gump-800.b4fdd3f3.jpg 800w, img/monument-valley/video-forrest-gump-1280.b4fdd3f3.jpg 1280w",
+  "full": "img/monument-valley/video-forrest-gump-1280.b4fdd3f3.jpg",
   "w": 1280,
   "h": 720
  },
@@ -1558,11 +2735,11 @@ window.TRIP_PHOTOS = {
   "h": 900
  },
  "sedona/hero": {
-  "src": "img/sedona/hero-452.f0f8cedb.jpg",
-  "srcset": "img/sedona/hero-452.f0f8cedb.jpg 452w",
-  "full": "img/sedona/hero-452.f0f8cedb.jpg",
-  "w": 452,
-  "h": 678
+  "src": "img/sedona/hero-800.dead7e21.jpg",
+  "srcset": "img/sedona/hero-800.dead7e21.jpg 800w, img/sedona/hero-1600.dead7e21.jpg 1600w",
+  "full": "img/sedona/hero-1600.dead7e21.jpg",
+  "w": 1600,
+  "h": 900
  },
  "sedona/oak-creek-canyon": {
   "src": "img/sedona/oak-creek-canyon-800.b71896c2.jpg",
@@ -1602,9 +2779,9 @@ window.TRIP_PHOTOS = {
 };
 window.TRIP_TICKETS = {
  "pappys-halloween-30out": {
-  "file": "ingressos/pappys-halloween-30out.61c018d6.bin",
+  "file": "ingressos/pappys-halloween-30out.bd69eb27.bin",
   "iter": 600000,
   "len": 4
  }
 };
-window.TRIP_BUILD = {"version": 7, "date": "18/10/2026 00:30"};
+window.TRIP_BUILD = {"version": 12, "date": "25/10/2026 20:54"};

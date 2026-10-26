@@ -212,7 +212,7 @@
           map(p.chips, function (c) { return chip(c, ' chip--sm'); }) + visitedTag(key) + '</div>' +
         (p.desc ? '<span class="row-desc">' + esc(p.desc) + '</span>' : '') +
         ticketBtn(p) +
-      '</div><div class="row-actions">' + actions(p.maps, p.instagram) + checkBtn(key) + '</div></div>';
+      '</div><div class="row-actions">' + (p.links === false ? '' : actions(p.maps, p.instagram)) + checkBtn(key) + '</div></div>';
   }
 
   function renderGroup(b, destId) {
@@ -350,7 +350,18 @@
     '</section>';
   }
 
-  // Paradas: card editorial por parada (foto, tags, texto, imperdível/dica, links e check).
+  // Mapa dentro de uma parada (ex.: caminhada pela borda): imagem inteira, sem corte, ampliável.
+  function stopMap(m, destId) {
+    var p = PHOTOS[destId + '/' + m.foto];
+    var ratio = p ? p.w + ' / ' + p.h : '4 / 3';
+    return '<figure class="stop-map">' +
+      '<button class="photo-block stop-map-img" type="button" data-photo data-caption="' + esc(m.caption) + '" aria-label="Ampliar: ' + esc(m.caption) + '" style="aspect-ratio:' + ratio + '">' +
+        photo(destId, m.foto, m.caption, 'mapa', 'wide') + '</button>' +
+      '<figcaption class="label-sm">' + icon('map', 14) + esc(m.caption) + '<span class="stop-map-hint">Toque para ampliar</span></figcaption>' +
+    '</figure>';
+  }
+
+  // Paradas: card editorial por parada (foto, tags, texto, mapa, imperdível/dica, links e check).
   function renderStops(b, destId) {
     var stops = list(b.stops);
     var keys = [];
@@ -370,8 +381,13 @@
           '<h3 class="stop-title">' + esc(s.title) + '</h3>' +
           (list(s.chips).length ? '<div class="chips">' + map(s.chips, function (c) { return chip(c); }) + '</div>' : '') +
           (list(s.paragraphs).length ? '<div class="paras">' + map(s.paragraphs, function (p) { return '<p class="body-text">' + esc(p) + '</p>'; }) + '</div>' : '') +
+          (s.map ? stopMap(s.map, destId) : '') +
           (s.highlight ? '<div class="stop-note"><span class="label-sm">' + icon('star', 14) + 'Imperdível</span><span>' + esc(s.highlight) + '</span></div>' : '') +
-          (s.tip ? '<div class="stop-note"><span class="label-sm">' + icon('lightbulb', 14) + 'Dica</span><span>' + esc(s.tip) + '</span></div>' : '') +
+          (s.tip ? '<div class="stop-note"><span class="label-sm">' + icon(s.tipIcon || 'lightbulb', 14) + esc(s.tipLabel || 'Dica') + '</span><span>' + esc(s.tip) + '</span></div>' : '') +
+          map(s.notes, function (n) {
+            return '<div class="stop-note"><span class="label-sm">' + icon(n.icon || 'info', 14) + esc(n.label || 'Nota') + '</span><span>' + esc(n.t) + '</span></div>';
+          }) +
+          (s.video ? '<div class="stop-video">' + renderVideo(s.video, destId) + '</div>' : '') +
           (list(s.places).length ? '<div class="places stop-places">' + map(s.places, function (p) { return placeRow(p, destId); }) + '</div>' : '') +
           '<div class="stop-foot">' + actions(s.maps, s.instagram) + checkBtn(key) + '</div>' +
         '</div></article>';
@@ -424,7 +440,7 @@
     var inner =
       '<div class="video-thumb">' + photo(destId, v.thumb, '', '16:9', 'wide') +
         '<span class="video-play">' + icon('play', 20) + '</span>' +
-        '<span class="eyebrow">Vídeo de referência</span></div>' +
+        '<span class="eyebrow">' + esc(v.eyebrow || 'Vídeo de referência') + '</span></div>' +
       '<div class="video-body"><div class="video-title">' + esc(v.title) + '</div>' +
         (u ? '<span class="video-link">' + icon('youtube') + 'Abrir no YouTube' + icon('arrow-up-right', 14) + '</span>'
            : '<span class="soon">Link do vídeo pendente</span>') +
